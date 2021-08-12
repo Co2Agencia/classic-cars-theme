@@ -1,0 +1,217 @@
+@import "variables.scss";
+@import "home.scss";
+@import "tienda.scss";
+@import "woocommerce.scss";
+
+/* Generales */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Bebas Neue";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#content .ast-container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+#primary{
+    margin-top: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* NavBar */
+/* ======================================== */
+#custom-nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+    z-index: 99;
+
+    a {
+        font-size: 1.3rem;
+        text-decoration: none;
+        transition: ease 300ms;
+    }
+
+    .custom-nav-bar-menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        position: absolute;
+
+        img{
+            max-width: 5rem;
+            transition: ease 3000ms;
+            &:hover{
+                transform: rotateY(720deg);
+            }
+        }
+
+        li {
+            list-style: none;
+            margin: 0 3%;
+            a {
+                color: white;
+
+                &:hover{
+                    color: red;
+                }
+            }
+        }
+    }
+
+    .nav-bar-tel {
+        margin-left: auto;
+        margin-right: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            color: red;
+            font-size: 2rem;
+            transform: rotateY(180deg);
+            margin-right: 1rem;
+        }
+
+        a{
+            color: #e2a840;
+        }
+    }
+}
+
+
+
+
+
+/* Footer */
+footer{
+    background-color: #353535;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.footer-parte-1{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 4rem 5%;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba($color: white, $alpha: .2);
+
+    .footer-texto{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .texto{
+            text-align: start;
+            margin: 0 1rem;
+            span{
+                color: red;
+                font-size: 1.3rem;
+            }
+            p{
+                color: white;
+                opacity: .5;
+                font-size: 1.5rem;
+                margin: 0;
+            }
+        }
+    }
+
+    .footer-redes{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        i{
+            font-size: 2rem;
+            color: white;
+            opacity: .5;
+            margin: 0 1rem;
+            transition: ease 300ms;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.footer-parte-2{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .footer-menu{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        max-width: 50rem;
+        min-width: 25rem;
+        align-items: center;
+        justify-content: space-evenly;
+
+        a{
+            color: white;
+            font-size: 1.5rem;
+            opacity: .5;
+            transition: ease 300ms;
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+
+    .footer-logo{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        justify-content: center;
+
+        img{
+            max-width: 10rem;
+            min-width: 5rem;
+            width: 100%;
+        }
+
+        p{
+            color: white;
+            opacity: .3;
+        }
+    }
+    
+}

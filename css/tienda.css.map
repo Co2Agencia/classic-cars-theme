@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,mBAAmB,CAAA;EACf,WAAW,EAAE,IAAI;CACpB",
+    "sources": [
+        "tienda.scss"
+    ],
+    "names": [],
+    "file": "tienda.css"
+}

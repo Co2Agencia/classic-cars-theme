@@ -1,0 +1,1062 @@
+/* Banner */
+/* ======================================== */
+.banner-video-contenedor {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  z-index: 1;
+}
+
+.banner-video-contenedor video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.banner-texto-contenedor, .banner-flecha {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.banner-texto-contenedor img {
+  max-width: 35%;
+}
+
+.banner-texto-contenedor a {
+  background: red;
+  color: white;
+  padding: .2rem 3rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+  text-decoration: none;
+}
+
+.banner-texto-contenedor a:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.banner-flecha {
+  bottom: 0;
+  margin-bottom: 1rem;
+}
+
+.banner-flecha p {
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  color: white;
+  opacity: .5;
+  letter-spacing: 1px;
+}
+
+.banner-flecha i {
+  font-size: 3rem;
+  color: white;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: banner-flecha;
+          animation-name: banner-flecha;
+}
+
+@-webkit-keyframes banner-flecha {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-1rem);
+            transform: translateY(-1rem);
+  }
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes banner-flecha {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-1rem);
+            transform: translateY(-1rem);
+  }
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/* Destacados */
+/* ======================================== */
+.productos-destacados-contenedor {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5rem 0;
+}
+
+.productos-destacados-contenedor h3 {
+  font-size: 5vw;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.productos-destacados {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productos-destacados .woocommerce {
+  width: 90%;
+}
+
+/* Busca tu classic Car */
+/* ======================================== */
+.ver-motos-contenedor {
+  position: relative;
+  width: 100%;
+  background-image: url("../img/fondo-studio.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 15rem;
+  padding-top: 4rem;
+}
+
+.ver-motos-contenedor::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background: -webkit-gradient(linear, right top, left top, color-stop(49%, black), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(-90deg, black 49%, rgba(0, 0, 0, 0) 100%);
+  opacity: .2;
+}
+
+.ver-motos-texto {
+  position: relative;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: white;
+  min-width: 12rem;
+  margin-right: 5%;
+}
+
+.ver-motos-texto h3 {
+  color: white;
+  font-size: 7vw;
+  margin: 0;
+}
+
+.ver-motos-texto p {
+  font-size: 3vw;
+  margin: 1rem 0;
+  margin-top: -1rem;
+}
+
+.ver-motos-texto a {
+  background: red;
+  color: white;
+  padding: .2rem 3rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+  text-decoration: none;
+}
+
+.ver-motos-texto a:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.ver-motos-moto {
+  position: relative;
+  z-index: 2;
+  width: 60%;
+  position: relative;
+}
+
+.ver-motos-moto img {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  width: 100%;
+  max-width: 50rem;
+  margin-bottom: -13rem;
+}
+
+.ver-motos-moto h2 {
+  position: absolute;
+  top: 42%;
+  left: 60%;
+  font-size: 18vw;
+  color: white;
+  opacity: .5;
+  margin: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* Busca tu classic Car */
+/* ======================================== */
+.ver-productos-contenedor {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-image: url("../img/Fondo retro 2.jpg");
+}
+
+.ver-productos-contenedor::before {
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, color-stop(49%, black), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(90deg, black 49%, rgba(0, 0, 0, 0) 100%);
+}
+
+.ver-productos-texto-contenedor {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 30%;
+  min-width: 12rem;
+  padding-left: 5%;
+  color: white;
+}
+
+.ver-productos-texto-contenedor h3 {
+  color: white;
+  font-size: 7vw;
+  margin: 0;
+}
+
+.ver-productos-texto-contenedor p {
+  font-size: 3vw;
+  margin: 1rem 0;
+  margin-top: -1rem;
+}
+
+.ver-productos-texto-contenedor a {
+  background: red;
+  color: white;
+  padding: .2rem 3rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+  text-decoration: none;
+}
+
+.ver-productos-texto-contenedor a:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.ver-productos-auto-contenedor {
+  position: relative;
+}
+
+.ver-productos-auto-contenedor h3 {
+  color: white;
+  opacity: .1;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-size: 23vw;
+  font-family: "Abril Fatface";
+  z-index: 1;
+  margin: 0;
+}
+
+.ver-productos-auto-contenedor img {
+  position: relative;
+  z-index: 10;
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+  width: 100%;
+}
+
+.ver-productos-auto-descripcion {
+  position: absolute;
+  bottom: 1rem;
+  left: 3%;
+  font-size: 1.3rem;
+  z-index: 3;
+  color: white;
+  opacity: .3;
+}
+
+/* Vende tu Classic Car */
+/* ======================================== */
+.vende-productos-contenedor {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, #4d4d4d), to(white));
+  background: linear-gradient(-90deg, #4d4d4d 20%, white 100%);
+  margin-top: 20rem;
+}
+
+.vende-productos-texto-contenedor {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-right: 5%;
+  color: white;
+}
+
+.vende-productos-texto-contenedor h3 {
+  color: white;
+  font-size: 7vw;
+  margin: 0;
+}
+
+.vende-productos-texto-contenedor p {
+  font-size: 3vw;
+  margin: 0;
+  margin-top: -2rem;
+}
+
+.vende-productos-texto-contenedor a {
+  background: red;
+  color: white;
+  padding: .2rem 3rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+  text-decoration: none;
+}
+
+.vende-productos-texto-contenedor a:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.vende-productos-auto-contenedor {
+  width: 65%;
+  margin-bottom: -4rem;
+}
+
+.vende-productos-auto-contenedor img {
+  -webkit-transform: rotateY(180deg) translateY(-4rem);
+          transform: rotateY(180deg) translateY(-4rem);
+  width: 100%;
+}
+
+/* Sobre nosotros */
+/* =========================================== */
+.nosotros-contenedor {
+  background-image: url(http://localhost:3000/wordpress2/wp-content/uploads/2021/08/crew.jpg);
+  text-align: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 10%;
+  margin-top: 10rem;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.nosotros-contenedor::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.nosotros-contenedor img {
+  width: 8rem;
+  position: relative;
+  z-index: 3;
+}
+
+.nosotros-contenedor h3 {
+  font-size: 6vw;
+  margin-top: 2rem;
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+.nosotros-contenedor p {
+  color: white;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Contactanos */
+/* =========================================== */
+.contactanos-contenedor {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-top: 10rem;
+  background-image: url("http://localhost:3000/wordpress2/wp-content/uploads/2021/08/Recepcion.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  position: relative;
+}
+
+.contactanos-contenedor::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.contactanos-contenedor::before {
+  display: block;
+  content: "";
+  position: absolute;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  left: 0;
+}
+
+.contactanos-contenedor div, .contactanos-contenedor h3 {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.contactanos-contenedor h3 {
+  font-size: 7vw;
+  margin: 0;
+}
+
+.contactanos-dato span {
+  color: red;
+  font-size: 1.3rem;
+}
+
+.contactanos-dato p {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.contactanos-botones a {
+  background: red;
+  color: white;
+  padding: .2rem 3rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+  text-decoration: none;
+  margin: 0 1rem;
+  display: inline-block;
+}
+
+.contactanos-botones a:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.contactanos-horarios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 50%;
+  font-size: 2rem;
+}
+
+.contactanos-horarios span {
+  color: red;
+}
+
+.contactanos-horarios p {
+  margin: 0;
+}
+
+.contactanos-redes a {
+  color: white;
+  opacity: .5;
+  margin: 0 1rem;
+  font-size: 2rem;
+}
+
+.contactanos-redes a:hover {
+  opacity: 1;
+}
+
+.contactanos-contenedor .contactanos-footer {
+  position: absolute;
+  bottom: 2rem;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#woocommerce-tienda {
+  padding-top: 8rem;
+}
+
+.woocommerce .products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.woocommerce .products li {
+  max-width: 30rem;
+  width: auto;
+  min-width: 20rem;
+  background: white;
+  -webkit-box-shadow: 7px 7px 43px -6px rgba(0, 0, 0, 0.37);
+          box-shadow: 7px 7px 43px -6px rgba(0, 0, 0, 0.37);
+  margin: 1rem;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+}
+
+.woocommerce .products li img {
+  width: 100%;
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.woocommerce .products li h2 {
+  color: black;
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.woocommerce .products li .button {
+  background: red;
+  color: white;
+  padding: .2rem 3rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  padding: .2rem 1rem;
+  margin: 1rem;
+  margin-top: 0;
+}
+
+.woocommerce .products li .button:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.woocommerce .products li:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+/* Generales */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Bebas Neue";
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#content .ast-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+#primary {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* NavBar */
+/* ======================================== */
+#custom-nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 6rem;
+  z-index: 99;
+}
+
+#custom-nav-bar a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+}
+
+#custom-nav-bar .custom-nav-bar-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  position: absolute;
+}
+
+#custom-nav-bar .custom-nav-bar-menu img {
+  max-width: 5rem;
+  -webkit-transition: ease 3000ms;
+  transition: ease 3000ms;
+}
+
+#custom-nav-bar .custom-nav-bar-menu img:hover {
+  -webkit-transform: rotateY(720deg);
+          transform: rotateY(720deg);
+}
+
+#custom-nav-bar .custom-nav-bar-menu li {
+  list-style: none;
+  margin: 0 3%;
+}
+
+#custom-nav-bar .custom-nav-bar-menu li a {
+  color: white;
+}
+
+#custom-nav-bar .custom-nav-bar-menu li a:hover {
+  color: red;
+}
+
+#custom-nav-bar .nav-bar-tel {
+  margin-left: auto;
+  margin-right: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#custom-nav-bar .nav-bar-tel i {
+  color: red;
+  font-size: 2rem;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  margin-right: 1rem;
+}
+
+#custom-nav-bar .nav-bar-tel a {
+  color: #e2a840;
+}
+
+/* Footer */
+footer {
+  background-color: #353535;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10rem;
+}
+
+.footer-parte-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 4rem 5%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-parte-1 .footer-texto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer-parte-1 .footer-texto .texto {
+  text-align: start;
+  margin: 0 1rem;
+}
+
+.footer-parte-1 .footer-texto .texto span {
+  color: red;
+  font-size: 1.3rem;
+}
+
+.footer-parte-1 .footer-texto .texto p {
+  color: white;
+  opacity: .5;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.footer-parte-1 .footer-redes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer-parte-1 .footer-redes i {
+  font-size: 2rem;
+  color: white;
+  opacity: .5;
+  margin: 0 1rem;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+}
+
+.footer-parte-1 .footer-redes i:hover {
+  opacity: 1;
+}
+
+.footer-parte-2 {
+  padding-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.footer-parte-2 .footer-menu {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 80%;
+  max-width: 50rem;
+  min-width: 25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.footer-parte-2 .footer-menu a {
+  color: white;
+  font-size: 1.5rem;
+  opacity: .5;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+}
+
+.footer-parte-2 .footer-menu a:hover {
+  opacity: 1;
+}
+
+.footer-parte-2 .footer-logo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer-parte-2 .footer-logo img {
+  max-width: 10rem;
+  min-width: 5rem;
+  width: 100%;
+}
+
+.footer-parte-2 .footer-logo p {
+  color: white;
+  opacity: .3;
+}
+/*# sourceMappingURL=style.css.map */
