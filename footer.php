@@ -42,7 +42,7 @@
         <div class="footer-logo">
 
             <a href="<?php echo home_url();?>/">
-                <img src="<?php echo home_url();?>/wp-content/uploads/2021/08/Logo-blanco.png" alt="Logo Classic Cars en Nav">
+                <img src="<?php echo home_url();?>/wp-content/themes/co2/img/logo-blanco.png" alt="Logo Classic Cars en Nav">
             </a>
             <p>© <?php echo date('Y'); ?> classic cars buenos aires. todos los derechos reservados. Creado por co2agencia.</p>
 

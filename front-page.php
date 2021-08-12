@@ -3,11 +3,11 @@
 <main id="sector-inicio">
         <div class="banner-video-contenedor">
             <video autoplay muted>
-                <source src="<?php echo home_url();?>/wp-content/uploads/2021/08/VideoClassicCars.mp4" type="video/mp4">
+                <source src="<?php echo home_url();?>/wp-content/themes/co2/img/VideoClassicCars.mp4" type="video/mp4">
             </video>
 
             <div class="banner-texto-contenedor">
-                <img src="<?php echo home_url();?>/wp-content/uploads/2021/08/Logo-color-sin-fondo.png" alt="Logo Classic Cars en Banner">
+                <img src="<?php echo home_url();?>/wp-content/themes/co2/img/logo-color.png" alt="Logo Classic Cars en Banner">
                 <a href="<?php echo home_url();?>/tienda">VER Tienda</a>
             </div>
 
@@ -31,7 +31,7 @@
 <div class="ver-motos-contenedor" id="sector-motos">
     <div class="ver-motos-moto">
         <h2>SPORTER</h2>
-        <img src="<?php echo home_url();?>/wp-content/uploads/2021/08/harleydavidson.png" alt="Harley Davidson 2008 sin fondo">
+        <img src="<?php echo home_url();?>/wp-content/themes/co2/img/harleydavidson.png" alt="Harley Davidson 2008 sin fondo">
     </div>
     <div class="ver-motos-texto">
         <h3>BUSCÁ</h3>
@@ -49,7 +49,7 @@
     </div>
 
     <div class="ver-productos-auto-contenedor">
-        <img src="<?php echo home_url();?>/wp-content/uploads/2021/08/FordMustang1968-con-sombra-2.png" alt="Ford mustang 1968 V8">
+        <img src="<?php echo home_url();?>/wp-content/themes/co2/img/FordMustang1968-con-sombra-2.png" alt="Ford mustang 1968 V8">
         <h3>1968</h3>
     </div>
 
@@ -59,7 +59,7 @@
 <!-- Vende Productos -->
 <div class="vende-productos-contenedor" id="sector-vende">
     <div class="vende-productos-auto-contenedor">
-        <img src="<?php echo home_url();?>/wp-content/uploads/2021/08/Camaro-1969.png" alt="Chevrolet Camara 1969 V8">
+        <img src="<?php echo home_url();?>/wp-content/themes/co2/img/Camaro-1969.png" alt="Chevrolet Camara 1969 V8">
     </div>
     <div class="vende-productos-texto-contenedor">
         <h3>VENDE</h3>
@@ -71,7 +71,7 @@
 
 <!-- Sobre nosotros -->
 <div class="nosotros-contenedor" id="sector-nosotros">
-    <img src="<?php echo home_url();?>/wp-content/uploads/2021/08/Logo-blanco.png" alt="Logo Classic Cars en Nav">
+    <img src="<?php echo home_url();?>/wp-content/themes/co2/img/logo-blanco.png" alt="Logo Classic Cars en Nav">
     <h3>SOBRE NOSOTROS</h3>
     <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eaque fugit alias ex aliquam praesentium in.
