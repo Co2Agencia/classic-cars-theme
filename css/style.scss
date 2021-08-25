@@ -251,11 +251,16 @@ footer{
         .texto{
             text-align: start;
             margin: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
             span{
                 color: red;
                 font-size: 1.3rem;
             }
-            p{
+            p, a{
                 color: white;
                 opacity: .5;
                 font-size: 1.5rem;
@@ -299,6 +304,7 @@ footer{
         max-width: 50rem;
         min-width: 25rem;
         align-items: center;
+        padding: 0;
         justify-content: space-evenly;
 
         a{
@@ -336,6 +342,42 @@ footer{
     
 }
 
+
+@media (max-width:750px){
+    .footer-parte-1{
+        flex-direction: column;
+
+        .footer-texto{
+            width: 100%;
+            justify-content: space-evenly;
+
+            .texto{
+                align-items: center;
+            }
+        }
+
+        .footer-redes{
+            width: 100%;
+            justify-content: space-evenly;
+            margin-top: 2rem;
+        }
+    }
+
+    .footer-parte-2{
+        .footer-menu{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width:490px){
+    .footer-parte-2{
+        .footer-menu{
+            display: none;
+        }
+    }
+
+}
 
 /* Wpp Icon */
 #wpp-chat-icon{

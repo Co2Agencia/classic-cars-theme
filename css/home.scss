@@ -245,7 +245,7 @@
         transform: rotateY(180deg);
         width: 100%;
         max-width: 50rem;
-        margin-bottom: -13rem;
+        margin-bottom: -17vw;
     }
 
     h2{
@@ -593,59 +593,10 @@
 }
 
 
-/* Vende tu Classic Car */
-/* ======================================== */
-.vende-productos-contenedor{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(-90deg, #4d4d4d 20%, white 100%);
-    margin-top: 20rem;
-}
-
-.vende-productos-texto-contenedor{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    padding-right: 5%;
-    color: white;
-
-    h3{
-        color: white;
-        font-size: 7vw;
-        margin: 0;
-    }
-
-    p{
-        font-size: 3vw;
-        margin: 0;
-        margin-top: -2rem;
-    }
-
-    a{
-        @include btn-general;
-    }
-}
-
-.vende-productos-auto-contenedor{
-    width: 65%;
-    margin-bottom: -4rem;
-    img{
-        transform: rotateY(180deg) translateY(-4rem);
-        width: 100%;
-    }
-}
-
-
 /* Sobre nosotros */
 /* =========================================== */
 .nosotros-contenedor{
-    background-image: url(http://localhost:3000/wordpress2/wp-content/uploads/2021/08/crew.jpg);
+    background-image: url(../img/crew.jpg);
     text-align: center;
     background-repeat: no-repeat;
     vertical-align: middle;
@@ -700,7 +651,7 @@
     align-items: center;
     text-align: center;
     margin-top: 10rem;
-    background-image: url("http://localhost:3000/wordpress2/wp-content/uploads/2021/08/Recepcion.jpg");
+    background-image: url(../img/Recepcion.jpg);
     background-size: cover;
     background-position: center;
     position: relative;

@@ -431,7 +431,7 @@
           transform: rotateY(180deg);
   width: 100%;
   max-width: 50rem;
-  margin-bottom: -13rem;
+  margin-bottom: -17vw;
 }
 
 .ver-motos-moto h2 {
@@ -915,91 +915,10 @@
   }
 }
 
-/* Vende tu Classic Car */
-/* ======================================== */
-.vende-productos-contenedor {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: relative;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background: -webkit-gradient(linear, right top, left top, color-stop(20%, #4d4d4d), to(white));
-  background: linear-gradient(-90deg, #4d4d4d 20%, white 100%);
-  margin-top: 20rem;
-}
-
-.vende-productos-texto-contenedor {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  padding-right: 5%;
-  color: white;
-}
-
-.vende-productos-texto-contenedor h3 {
-  color: white;
-  font-size: 7vw;
-  margin: 0;
-}
-
-.vende-productos-texto-contenedor p {
-  font-size: 3vw;
-  margin: 0;
-  margin-top: -2rem;
-}
-
-.vende-productos-texto-contenedor a {
-  background: red;
-  color: white;
-  padding: .2rem 3rem;
-  border-radius: 50px;
-  font-size: 1.5rem;
-  -webkit-transition: ease 300ms;
-  transition: ease 300ms;
-  text-decoration: none;
-}
-
-.vende-productos-texto-contenedor a:hover {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-}
-
-.vende-productos-auto-contenedor {
-  width: 65%;
-  margin-bottom: -4rem;
-}
-
-.vende-productos-auto-contenedor img {
-  -webkit-transform: rotateY(180deg) translateY(-4rem);
-          transform: rotateY(180deg) translateY(-4rem);
-  width: 100%;
-}
-
 /* Sobre nosotros */
 /* =========================================== */
 .nosotros-contenedor {
-  background-image: url(http://localhost:3000/wordpress2/wp-content/uploads/2021/08/crew.jpg);
+  background-image: url(../img/crew.jpg);
   text-align: center;
   background-repeat: no-repeat;
   vertical-align: middle;
@@ -1081,7 +1000,7 @@
           align-items: center;
   text-align: center;
   margin-top: 10rem;
-  background-image: url("http://localhost:3000/wordpress2/wp-content/uploads/2021/08/Recepcion.jpg");
+  background-image: url(../img/Recepcion.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -2449,6 +2368,19 @@ footer {
 .footer-parte-1 .footer-texto .texto {
   text-align: start;
   margin: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .footer-parte-1 .footer-texto .texto span {
@@ -2456,7 +2388,7 @@ footer {
   font-size: 1.3rem;
 }
 
-.footer-parte-1 .footer-texto .texto p {
+.footer-parte-1 .footer-texto .texto p, .footer-parte-1 .footer-texto .texto a {
   color: white;
   opacity: .5;
   font-size: 1.5rem;
@@ -2525,6 +2457,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -2570,6 +2503,42 @@ footer {
   text-align: center;
   color: white;
   opacity: .3;
+}
+
+@media (max-width: 750px) {
+  .footer-parte-1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer-parte-1 .footer-texto {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .footer-parte-1 .footer-texto .texto {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer-parte-1 .footer-redes {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-top: 2rem;
+  }
+  .footer-parte-2 .footer-menu {
+    width: 100%;
+  }
+}
+
+@media (max-width: 490px) {
+  .footer-parte-2 .footer-menu {
+    display: none;
+  }
 }
 
 /* Wpp Icon */
