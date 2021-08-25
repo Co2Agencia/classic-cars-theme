@@ -1,20 +1,14 @@
 <footer>
     <div class="footer-parte-1">
         <div class="footer-texto">
-
-            <div class="texto">
-                <span>dirección</span>
-                <p>1234 AV. libertador</p>
-            </div>
-
             <div class="texto">
                 <span>telefono</span>
-                <p>123 - 4567891011</p>
+                <p><?php  echo variables_general("tel");?></p>
             </div>
 
             <div class="texto">
                 <span>mail</span>
-                <p>ejemplo@gmail.com</p>
+                <p><?php  echo variables_general("mail");?></p>
             </div>
             
         </div>
@@ -24,7 +18,7 @@
                 <i class="fab fa-instagram"></i>
             </a>
 
-            <a href="mailto:mailprueba@gmail.com">
+            <a href="mailto:<?php  echo variables_general("mail");?>">
                 <i class="fas fa-mail-bulk"></i>
             </a>
 
@@ -42,7 +36,7 @@
         <div class="footer-logo">
 
             <a href="<?php echo home_url();?>/">
-                <img src="<?php echo home_url();?>/wp-content/themes/co2/img/logo-blanco.png" alt="Logo Classic Cars en Nav">
+                <img src="<?php bloginfo('template_url'); ?>/img/logo-blanco.png" alt="Logo Classic Cars en Nav">
             </a>
             <p>© <?php echo date('Y'); ?> classic cars buenos aires. todos los derechos reservados. Creado por co2agencia.</p>
 

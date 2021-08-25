@@ -17,6 +17,18 @@
         height: 100%;
         object-fit: cover;
     }
+
+    .overlay{
+        display: block;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
 }
 
 .banner-texto-contenedor, .banner-flecha{
@@ -25,19 +37,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .banner-texto-contenedor{
+    width: 50%;
+    max-width: 40rem;
+    min-width: 15rem;
     img{
-        max-width: 35%;
+        max-width: 70rem;
+        width: 80%;
+        min-width: 10rem;
     }
 
     a{
         @include btn-general;
+
+        margin-top: -2rem;
     }
 }
 
 .banner-flecha{
+
     bottom: 0;
     margin-bottom: 1rem;
     p{
@@ -92,10 +113,70 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     .woocommerce{
         width: 90%;
         .products{
+            display: inline-flex;
+            width: max-content;
+        }
+    }
 
+    .splide__arrow{
+        fill: red;
+        width: 2.5rem;
+        border: 2px solid red;
+        background: none;
+        height: 2.5rem;
+
+        &:hover{
+            background-color: red;
+            fill: white;
+        }
+    }
+
+    .splide__arrow--prev{
+        left: 2rem;
+    }
+
+    .splide__arrow--next{
+        right: 2rem;
+    }
+
+    .splide__pagination{
+        bottom: -2rem;
+
+        .is-active{
+            background-color: red;
+        }
+    }
+
+    .contenedor-hijos{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width:500px){
+    .productos-destacados{
+        .woocommerce .products li{
+            width: 70vw;
+            min-width: 70vw;
+        }
+
+        .splide__arrow{
+            width: 2rem;
+            height: 2rem;
+        }
+    
+        .splide__arrow--prev{
+            left: 1rem;
+        }
+    
+        .splide__arrow--next{
+            right: 1rem;
         }
     }
 }
@@ -114,7 +195,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    margin-bottom: 15rem;
+    margin-bottom: $espacio-entre-sectores;
     padding-top: 4rem;
 
     &::after{
@@ -139,12 +220,10 @@
     align-items: flex-end;
     color: white;
     min-width: 12rem;
-    margin-right: 5%;
+    margin-right: $padding-contenedor-texto-sectores;
 
     h3{
-        color: white;
-        font-size: 7vw;
-        margin: 0;
+        @include home-h3-estilos;
     }
     p{
         font-size: 3vw;
@@ -194,6 +273,7 @@
     align-items: center;
     justify-content: space-between;
     background-image: url("../img/Fondo\ retro\ 2.jpg");
+    margin-bottom: $espacio-entre-sectores;
 
     &::before{
         display: block;
@@ -212,14 +292,12 @@
     justify-content: center;
     align-items: flex-start;
     width: 30%;
-    min-width: 12rem;
-    padding-left: 5%;
+    min-width: 22rem;
+    padding-left: $padding-contenedor-texto-sectores;
     color: white;
 
     h3{
-        color: white;
-        font-size: 7vw;
-        margin: 0;
+        @include home-h3-estilos;
     }
     p{
         font-size: 3vw;
@@ -265,6 +343,253 @@
     z-index: 3;
     color: white;
     opacity: .3;
+}
+
+
+
+/* Sector Daily Cars */
+/* ======================================== */
+.ver-daily-contenedor{
+    background-image: url(../img/mercedez-fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: $espacio-entre-sectores;
+}
+
+
+.ver-daily-auto{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    h2{
+        color: white;
+        opacity: .1;
+        position: absolute;
+        top: 10%;
+        left: 30%;
+        font-size: 23vw;
+        z-index: 1;
+        margin: 0;
+    }
+
+    img{
+        padding-top: 5rem;
+        width: 100%;
+        max-width: 50rem;
+        transform: translateY(25%);
+        z-index: 2;
+    }
+
+    h3{
+        color: white;
+        font-size: 7vw;
+        margin: 0;
+    }
+}
+
+
+.ver-daily-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: $padding-contenedor-texto-sectores;
+
+    a{
+        @include btn-general;
+    }
+
+    h3{
+        @include home-h3-estilos;
+    }
+}
+
+
+
+/* Sector Truck */
+/* ======================================== */
+.ver-trucks-contenedor{
+    width: 100%;
+    background-color: #f4f4f4;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $espacio-entre-sectores;
+
+    &::after{
+        width: $trucks-contenedor-width;
+        height: 100%;
+        transform-origin: right bottom;
+        transform: skew(30deg, 0deg);
+        background: linear-gradient(90deg, rgba(0,0,0,1) -120%, $color-azul 20%);        
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: " ";
+    }
+
+    &::before{
+        content: " ";
+        width: $trucks-contenedor-width;
+        background-color: rgba(97,192,199,1);
+        height: 100%;
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+    }
+}
+
+
+.ver-trucks-auto{
+    width: 60%;    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        color: white;
+        opacity: .35;
+        position: absolute;
+        top: 5%;
+        left: 30%;
+        font-size: 23vw;
+        z-index: 1;
+        margin: 0;
+    }
+
+    img{
+        margin-top: 5rem;
+        width: 100%;
+        max-width: 55rem;
+        z-index: 3;
+        transform: rotateY(180deg) translateY(35%);
+    }
+}
+
+
+.ver-trucks-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: $padding-contenedor-texto-sectores;
+
+    a{
+        @include btn-general;
+    }
+
+    h3{
+        @include home-h3-estilos;
+        color: black;
+    }
+}
+
+
+
+/* Sector Exclusive */
+/* ======================================== */
+.ver-exclusive-contenedor{
+    margin-top: 5rem;
+    width: 100%;
+    background: $color-verde-gradient;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $espacio-entre-sectores;
+
+    &::after{
+        content: " ";
+        display: block;
+        width: $circle-width;
+        position: absolute;
+        padding-bottom: $circle-width;
+        background-color: white;
+        bottom: -30%;
+        left: -10%;
+        border-radius: 100% 100% 100% 0;
+        
+    }
+}
+
+
+.ver-exclusive-auto{
+    width: 60%;    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        color: black;
+        opacity: .1;
+        position: absolute;
+        top: 5%;
+        left: 10%;
+        font-size: 18vw;
+        z-index: 1;
+        margin: 0;
+    }
+
+    img{
+        margin-top: -30%;
+        width: 100%;
+        max-width: 55rem;
+        z-index: 3;
+        transform: rotateY(180deg) translateY(35%);
+    }
+}
+
+
+.ver-exclusive-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: $padding-contenedor-texto-sectores;
+
+    a{
+        @include btn-general;
+    }
+
+    h3{
+        @include home-h3-estilos;
+    }
+}
+
+
+@media (min-width:1500px){
+    .ver-exclusive-contenedor{
+        &::after{
+            padding-bottom: 0;
+            width: 55rem;
+            height: 55rem;
+            bottom: -15rem;
+            left: -10rem;
+        }
+    }
+
+    .ver-exclusive-auto{
+        justify-content: flex-start;
+        img{
+            margin-top: -20%;
+        }
+    }
 }
 
 
@@ -432,6 +757,7 @@
     justify-content: space-evenly;
     width: 50%;
     font-size: 2rem;
+    min-width: 25rem;
 
     span{
         color: red;

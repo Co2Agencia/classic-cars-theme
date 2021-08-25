@@ -12,37 +12,627 @@
 
         // Estilos del producto
         li{
-            max-width: 30rem;
-            width: auto;
-            min-width: 20rem;
-            background: white;
-            box-shadow: 7px 7px 43px -6px rgba(0,0,0,.37);
-            margin: 1rem;
-            transition: 300ms ease;
+            @include product-card;
+        }
+    }
+}
+
+
+
+/* Single Product Page */
+
+.product-template-default{
+    .single-product-custom-wrapper{
+        background-color: #eaeaea;
+        margin-top: 6rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "imagenes imagenes descripcion" 
+        "relacionados relacionados relacionados"
+        ;
+        
+        .woocommerce-product-gallery{
+            grid-area: imagenes;
+        }
+
+        .summary{
+            grid-area: descripcion;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 2rem;
+            box-sizing: border-box;
+            background: #e4e4e4;
+
+            h1{
+                margin-top: 4rem;
+                margin-bottom: 0;
+            }
+
+            .price{
+                display: none;
+            }
+
+            .woocommerce-product-details__short-description{
+                p{
+                    font-family: 'Montserrat';
+                    font-weight: 300;
+                    opacity: .7;
+                    margin: 0;
+                }
+            }
+
+            .product_meta{
+                margin-top: 2rem;
+                border-top: 1px solid rgba(0,0,0,.2);
+                width: 50%;
+                max-width: 15rem;
+                padding-top: 1rem;
+
+                a{
+                    color: red;
+                }
+            }
+        }
+
+        .related{
+            grid-area: relacionados;
+            background-color: white;
+            padding-top: 5rem;
+        }
+    }
+}
+
+
+.woocommerce-product-gallery{
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out 0s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 20rem;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+
+    // Product ViewPort
+    .flex-viewport{
+        width: 100%;
+        max-width: 800px;
+        min-width: 300px;
+    }
+    .woocommerce-product-gallery__image{
+        max-width: 800px;
+        min-width: 300px;
+        a{
+            width: 100%;
 
             img{
                 width: 100%;
-                height: 15rem;
-                object-fit: cover;
+                height: auto;
+                cursor: pointer;
             }
+        }
+    }
+
+    // Product Thumbnails
+    .flex-control-thumbs{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        box-sizing: border-box;
+        margin: 2rem 0;
+
+        li{
+            cursor: pointer;
+            list-style: none;
+            width: 18%;
+            max-width: 15rem;
+            background: white;
+            min-width: 8rem;
+            margin: 1rem;
+            height: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 15px;
+                transition: ease 300ms;
+            }
+        }
+
+        .flex-active{
+            border: 2px solid #e2a840;
+        }
+    }
+
+    // Lupa que agranda la foto producto
+    .woocommerce-product-gallery__trigger{
+        position: absolute;
+        top: 7%;
+        left: 5rem;
+        z-index: 9;
+        background: white;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        box-shadow: 5px 3px 5px #00000014;
+
+        i{
+            color: darkgrey;
+        }
+    }
+}
+
+
+@media (min-width:1300px){
+    .product-template-default{
+        .single-product-custom-wrapper{
+            grid-template-columns: 1fr 2fr 1fr 1fr;
+            grid-template-areas:
+            "imagenes imagenes descripcion descripcion" 
+            "relacionados relacionados relacionados relacionados";
+
+            .summary{
+
+            }
+        }
+    }
+}
+
+
+/* Tienda WooCommerce */
+#woocommerce-tienda{
+    padding-top: 0;
+    /* Banner */
+    #banner-tienda-contenedor{
+        background-image: url(../img/fila-autos.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 70vh;
+        width: 100%;
+        box-sizing: border-box;
+
+        @include overlay;
+
+        &::before{
+            background: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, red 120%);
+            position: absolute;
+            display: block;
+            // content: "";
+            width: 100%;
+            opacity: .7;
+            height: 30%;
+            bottom: 0;
+        }
+
+        h1,p{
+            margin: 0 2rem;
+            z-index: 2;
+            color: white;
+        }
+
+
+        h1{
+            width: 30%;
+            margin: 0 2rem;
+            line-height: 10vw;
+            font-weight: 100;
+            font-size: 10vw;
+            letter-spacing: .4vw;
+
+            span{
+                color: red;
+            }
+        }
+
+        p{
+            font-size: 2rem;
+            opacity: .5;
+            width: 20rem;
+        }
+    }
+    
+
+    /* Categorias Botones y Ford Raptor */
+    #tienda-sector-btn-img-categorias{
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: 1fr;
+        width: 100%;
+
+        /* Botones */
+        .tienda-categorias-btn{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 6vw;
+            margin-top: 5rem;
 
             h2{
-                color: black;
-                font-size: 1.5rem;
-                margin: 1rem;
+                font-size: 5vw;
+                margin: 0;
+                margin-bottom: 1rem;
+                font-family: 'Montserrat';
+            }
+            span:first-child{
+                font-family: 'Montserrat';
+                font-size: 2rem;
+                color: red;
+                opacity: .5;
+            }
+        }
+
+        .tienda-categorias-btn-contenedor{
+            width: 100%;
+            display: grid;
+            grid-template-rows: auto auto;
+            grid-gap: 1rem;
+            box-sizing: border-box;
+            grid-template-columns: auto auto auto;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            a{
+                background-color: #d3d3d338;
+                width: 15vw;
+                max-width: 12rem;
+                max-height: 12rem;
+                height: 15vw;
+                min-width: 7rem;
+                min-height: 7rem;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                border: none;
+                padding: 0;
+                transition: ease 300ms;
+                color: #a5a5a5;
+                fill: #a5a5a5;
+                cursor: pointer;
+                margin: 0;
+                
+                span,svg{
+                    position: absolute;
+                }
+
+                svg{
+                    width: 50%;
+                    height: fit-content;
+                }
+
+                span{
+                    bottom: 10%;
+                    font-size: 1.5rem;
+                    font-family: 'Bebas Neue';
+                }
+                &:hover{
+                    background-color: red;
+                    color: white;
+                    fill: white;
+                }
             }
 
-            .button{
-                @include btn-general;
-                display: inline-block;
-                font-size: 1rem;
-                padding: .2rem 1rem;
-                margin: 1rem;
-                margin-top: 0;
+            a:nth-child(4){
+                svg{
+                    transform: rotateY(180deg);
+                    
+                }
+            }
+
+            p{
+                font-size: 2rem;
+                font-family: 'Montserrat';
+                color: red;
+                opacity: .5;
+            }
+
+            .btn-categorias-active{
+                background-color: red;
+                color: white;
+                fill: white;
+            }
+        }
+
+        /* Ford Raptor */
+        .tienda-categorias-img{
+            background-image: url(../img/fondo-tienda-categorias.svg);
+            background-position: bottom right;
+            background-position-x: 6vw;
+            background-position-y: bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            justify-content: flex-end;
+            align-items: flex-start;
+            max-width: 30rem;
+            margin-left: auto;
+
+            img{
+                width: 100%;
+                bottom: 0;
+                position: absolute;
+                max-width: 30rem;
+            }
+        }
+    }
+
+
+    /* Categorias Slider */
+    .tienda-sector-slider-contenedor{
+        width: 100%;
+        overflow: hidden;
+        padding-top: 5rem;
+    }
+
+    .tienda-sector-slider{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: fit-content;
+        transition: ease 300ms;
+
+        .tienda-sector-slide{
+            width: 100vw;
+            height: 30rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .categoria-slide-texto{
+                background-color: #f7f7f7;
+                padding: 2rem 0;
+                width: 30%;
+                height: 100%;
+                padding-left: 2rem;
+                font-family: 'Montserrat';
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+
+                p{
+                    font-size: 1.2rem;
+                    margin: 0;
+                    color: red;
+                    opacity: .5;
+                    font-weight: 500;
+                }
+
+                h2{
+                    font-size: 5vw;
+                    margin: 0;
+                    margin-bottom: 2rem;
+                    color: black;
+                    line-height: 6rem;
+                }
+
+                a{
+                    color: red;
+                    border: 2px solid red;
+                    padding: .2rem 1.5rem;
+                    font-weight: 500;
+                    border-radius: 50px;
+                    transition: ease 300ms;
+
+                    &:hover{
+                        background-color: red;
+                        color: white;
+                    }
+                }
+
+            }
+            
+            .categoria-slide-slider{
+                background-color: #2d2d2d;
+                width: 70%;
+                height: 100%;
+                position: relative;
+            }
+        }
+
+        // Producto Cartas Estilos
+        .categoria-slide-slider{
+            .splide__list{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                li{
+                    @include product-card;
+                    max-width: 25rem;
+                }
+            }
+
+            .splide__slide{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .cat-splide{
+                position: relative;
+                height: 100%;
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .splide__track{
+                width: 90%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .splide__pagination{
+                .is-active{
+                    background: red;
+                }
+            }
+
+            .splide__arrows{
+                .splide__arrow{
+                    fill: red;
+                    width: 2rem;
+                    border: 2px solid red;
+                    background: none;
+                    height: 2rem;
+                    transition: ease 300ms;
+                    &:hover{
+                        background: red;
+                        fill: white;
+                    }
+                }
+
+                .splide__arrow--next{
+                    right: 2rem;
+                }
+                .splide__arrow--prev{
+                    left: 1rem;
+                }
+            }
+            
+        }
+
+        .tienda-sector-slide:nth-child(5){
+            h2{
+                font-size: 4vw;
+            }
+        }
+    }
+
+    /* Paginator de Categoria Slider */
+    .tienda-slider-paginator{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+
+        .paginator-btn{
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+            border: none;
+            outline: none;
+            margin: 0 1rem;
+            fill: #a5a5a5;
+            transition: 300ms ease;
+            cursor: pointer;
+            svg{
+                width: 100%;
             }
 
             &:hover{
-                transform: scale(.95);
+                fill: red;
+            }
+        }
+
+        .paginator-btn-active{
+            fill: red;
+            transform: scale(1.3);
+        }
+    }
+
+
+    /* Todos los productos */
+    .tienda-todos-productos-contenedor{
+        margin-top: 5rem;
+        padding: 0 7vw;
+        .texto{
+            h2{
+                font-weight: 100;
+                font-size: 5rem;
+                letter-spacing: 2px;
+                margin: 0;
+            }
+            p{
+                margin: 0;
+                font-size: 2rem;
+                color: red;
+                margin-bottom: -1rem;
+            }
+        }
+
+        .woocommerce-ordering{
+            select{
+                font-family: 'Bebas Neue';
+                font-size: 1rem;
+                color: red;
+                outline: none;
+                border: 2px solid red;
+                padding: .5rem;
+                transition: ease 300ms;
+                cursor: pointer;
+
+                &:hover {
+                    background: red;
+                    color: white !important;
+                }
+
+                option{
+                    color: black;
+                    background: white;
+                }
+            }
+            
+        }
+
+        .products{
+            justify-content: space-between;
+            li{
+                width: 23vw;
+            }
+        }
+    }
+}
+
+@media (min-width:1450px){
+    #woocommerce-tienda{
+        /* Banner */
+
+        #banner-tienda-contenedor{
+            h1{
+                line-height: 8rem;
+                font-size: 9rem;
+                letter-spacing: 5px;
             }
         }
     }
