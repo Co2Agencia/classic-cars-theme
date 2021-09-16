@@ -26,7 +26,6 @@
 
 <?php
 /* echo do_shortcode("[wpbsearch]"); */
-echo do_shortcode("[CP_APP_HOUR_BOOKING id='1']");
 ?>
 
 
