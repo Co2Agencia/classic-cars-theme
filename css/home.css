@@ -1,41 +1,3 @@
-@font-face {
-  font-family: 'Bebas Neue';
-  src: url(../tipografias/BebasNeue-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: 'Abril Fatface';
-  src: url(../tipografias/AbrilFatface-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Regular.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Thin.ttf) format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Light.ttf) format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Bold.ttf) format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
 /* Banner */
 /* ======================================== */
 .banner-video-contenedor {
@@ -77,6 +39,13 @@
   z-index: 1;
 }
 
+.banner-video-contenedor-mobile-bg {
+  background-image: url(../img/home/autos-galeria.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .banner-texto-contenedor, .banner-flecha {
   position: absolute;
   display: -webkit-box;
@@ -116,6 +85,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
   margin-top: -2rem;
 }
 
@@ -135,6 +108,7 @@
   color: white;
   opacity: .5;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .banner-flecha i {
@@ -178,6 +152,25 @@
   }
 }
 
+@media (max-width: 750px) {
+  .banner-texto-contenedor {
+    width: 90%;
+  }
+  .banner-texto-contenedor img {
+    margin-top: -3rem;
+  }
+  .banner-texto-contenedor a {
+    margin-top: 0;
+  }
+}
+
+@media (min-aspect-ratio: 260 / 131) {
+  .banner-texto-contenedor {
+    margin-top: -4rem;
+    width: 30%;
+  }
+}
+
 /* Destacados */
 /* ======================================== */
 .productos-destacados-contenedor {
@@ -199,7 +192,7 @@
 }
 
 .productos-destacados-contenedor h3 {
-  font-size: 5vw;
+  font-size: 7vw;
   margin: 0;
   margin-bottom: 2rem;
 }
@@ -268,9 +261,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -290,6 +283,18 @@
   }
   .productos-destacados .splide__arrow--next {
     right: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .productos-destacados-contenedor h3 {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .productos-destacados-contenedor h3 {
+    font-size: 17vw;
   }
 }
 
@@ -374,6 +379,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
 }
 
 .ver-motos-texto a:hover {
@@ -406,6 +415,58 @@
   margin: 0;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media (max-width: 800px) {
+  .ver-motos-contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 25vw;
+  }
+  .ver-motos-contenedor::after {
+    content: "";
+    display: block;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, black), color-stop(85%, rgba(0, 0, 0, 0)));
+    background: linear-gradient(180deg, black 50%, rgba(0, 0, 0, 0) 85%);
+    height: 50%;
+    top: 0;
+    left: 0;
+  }
+  .ver-motos-texto {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+    margin-bottom: -8vw;
+  }
+  .ver-motos-texto h3 {
+    color: white;
+    font-size: 5rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+  .ver-motos-moto {
+    width: 80%;
+  }
+  .ver-motos-moto h2 {
+    left: 50%;
+    font-size: 25vw;
+  }
+  .ver-motos-moto img {
+    margin-bottom: -20vw;
+  }
 }
 
 /* Busca tu classic Car */
@@ -456,7 +517,6 @@
       -ms-flex-align: start;
           align-items: flex-start;
   width: 30%;
-  min-width: 22rem;
   padding-left: 5%;
   color: white;
 }
@@ -482,6 +542,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
 }
 
 .ver-productos-texto-contenedor a:hover {
@@ -491,6 +555,7 @@
 
 .ver-productos-auto-contenedor {
   position: relative;
+  width: 70%;
 }
 
 .ver-productos-auto-contenedor h3 {
@@ -521,6 +586,63 @@
   z-index: 3;
   color: white;
   opacity: .3;
+}
+
+@media (max-width: 800px) {
+  .ver-productos-contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 4rem;
+    margin-bottom: 25vw;
+  }
+  .ver-productos-contenedor::before {
+    background: -webkit-gradient(linear, left top, left bottom, from(black), to(rgba(0, 0, 0, 0)));
+    background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0) 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+  }
+  .ver-productos-texto-contenedor {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .ver-productos-texto-contenedor h3 {
+    color: white;
+    font-size: 15vw;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+  .ver-productos-auto-contenedor {
+    width: 90%;
+  }
+  .ver-productos-auto-contenedor h3 {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    right: unset;
+    bottom: 30%;
+    font-size: 30vw;
+    top: unset;
+  }
+  .ver-productos-auto-descripcion {
+    display: none;
+  }
 }
 
 /* Sector Daily Cars */
@@ -612,6 +734,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
 }
 
 .ver-daily-texto a:hover {
@@ -623,6 +749,53 @@
   color: white;
   font-size: 7vw;
   margin: 0;
+}
+
+@media (max-width: 800px) {
+  .ver-daily-contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 25vw;
+    padding-top: 4rem;
+  }
+  .ver-daily-auto {
+    width: 80%;
+  }
+  .ver-daily-auto h2 {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    top: unset;
+    bottom: 25%;
+    font-size: 30vw;
+  }
+  .ver-daily-auto img {
+    padding: 0;
+  }
+  .ver-daily-texto {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+  .ver-daily-texto h3 {
+    font-size: 15vw;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
 }
 
 /* Sector Truck */
@@ -723,6 +896,7 @@
       -ms-flex-align: start;
           align-items: flex-start;
   padding-left: 5%;
+  z-index: 2;
 }
 
 .ver-trucks-texto a {
@@ -734,6 +908,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
 }
 
 .ver-trucks-texto a:hover {
@@ -746,6 +924,57 @@
   font-size: 7vw;
   margin: 0;
   color: black;
+}
+
+@media (max-width: 800px) {
+  .ver-trucks-contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 25vw;
+    padding-top: 4rem;
+  }
+  .ver-trucks-contenedor::before {
+    width: 60%;
+  }
+  .ver-trucks-contenedor::after {
+    width: 50%;
+  }
+  .ver-trucks-auto {
+    width: 80%;
+  }
+  .ver-trucks-auto h2 {
+    display: none;
+  }
+  .ver-trucks-auto img {
+    padding: 0;
+    margin: 0;
+  }
+  .ver-trucks-texto {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-bottom: -8vw;
+  }
+  .ver-trucks-texto h3 {
+    font-size: 5rem;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
 }
 
 /* Sector Exclusive */
@@ -846,6 +1075,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
 }
 
 .ver-exclusive-texto a:hover {
@@ -877,10 +1110,65 @@
   }
 }
 
+@media (max-width: 800px) {
+  .ver-exclusive-contenedor {
+    margin: 0;
+    margin-bottom: 25vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 4rem;
+  }
+  .ver-exclusive-contenedor::after {
+    width: 60%;
+    left: 7%;
+  }
+  .ver-exclusive-auto {
+    width: 80%;
+  }
+  .ver-exclusive-auto h2 {
+    top: unset;
+    font-size: 25vw;
+    bottom: 25%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .ver-exclusive-auto img {
+    -webkit-transform: rotateY(180deg) translateY(45%);
+            transform: rotateY(180deg) translateY(45%);
+  }
+  .ver-exclusive-texto {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-bottom: -8vw;
+  }
+  .ver-exclusive-texto h3 {
+    font-size: 5rem;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+}
+
 /* Sobre nosotros */
 /* =========================================== */
 .nosotros-contenedor {
-  background-image: url(../img/crew.jpg);
+  background-image: url(../img/home/crew.jpg);
   text-align: center;
   background-repeat: no-repeat;
   vertical-align: middle;
@@ -943,6 +1231,19 @@
   margin-top: 0;
 }
 
+@media (max-width: 800px) {
+  .nosotros-contenedor {
+    height: unset;
+    padding: 2rem;
+  }
+  .nosotros-contenedor h3 {
+    margin-top: 0;
+    font-size: 14vw;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+}
+
 /* Contactanos */
 /* =========================================== */
 .contactanos-contenedor {
@@ -962,7 +1263,7 @@
           align-items: center;
   text-align: center;
   margin-top: 10rem;
-  background-image: url(../img/Recepcion.jpg);
+  background-image: url(../img/home/Recepcion.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1026,6 +1327,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
   margin: 0 1rem;
   display: inline-block;
 }
@@ -1048,7 +1353,6 @@
           justify-content: space-evenly;
   width: 50%;
   font-size: 2rem;
-  min-width: 25rem;
 }
 
 .contactanos-horarios span {
@@ -1057,6 +1361,10 @@
 
 .contactanos-horarios p {
   margin: 0;
+}
+
+.contactanos-redes {
+  margin-top: 2rem;
 }
 
 .contactanos-redes a {
@@ -1087,5 +1395,28 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 800px) {
+  .contactanos-contenedor h3 {
+    font-size: 15vw;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  .contactanos-horarios {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contactanos-contenedor .contactanos-footer {
+    position: unset;
+    margin-top: 3rem;
+  }
+  .contactanos-contenedor .contactanos-footer .contactanos-redes {
+    position: absolute;
+    bottom: 2rem;
+    margin: 0;
+  }
 }
 /*# sourceMappingURL=home.css.map */

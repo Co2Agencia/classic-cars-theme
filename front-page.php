@@ -2,18 +2,20 @@
 <!-- Banner -->
 <main id="sector-inicio">
         <div class="banner-video-contenedor">
-            <video autoplay muted>
-                <source src="<?php bloginfo('template_url'); ?>/img/VideoClassicCars.mp4" type="video/mp4">
-            </video>
+            <?php if(check_device() != "mobile" && check_device() != "tablet"):?>
+                <video autoplay muted>
+                    <source src="<?php echo get_img_url("home");?>/VideoClassicCars.mp4" type="video/mp4">
+                </video>
+            <?php endif;?>
 
             <div class="banner-texto-contenedor">
-                <img src="<?php bloginfo('template_url'); ?>/img/logo-color.png" alt="Logo Classic Cars en Banner">
+                <img src="<?php echo get_img_url();?>/logo-color.png" alt="Logo Classic Cars en Banner">
                 <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) );?>">VER Tienda</a>
             </div>
 
             <div class="banner-flecha">
                 <p>COMERCIALIZACIÓN DE AUTOS CLASICOS</p>
-                <a href="#sector-destacados">
+                <a href="#sector-destacados" aria-label="Boton Destacados">
                     <i class="fas fa-chevron-down"></i>
                 </a>
             </div>
@@ -24,7 +26,9 @@
 
 <?php
 /* echo do_shortcode("[wpbsearch]"); */
+
 ?>
+
 
 <!-- Productos Destacados -->
 <div class="productos-destacados-contenedor" id="sector-destacados">
@@ -35,10 +39,10 @@
 </div>
 
 <!-- Ver Motos -->
-<div class="ver-motos-contenedor" id="sector-motos">
+<div class="ver-motos-contenedor home-sector-contenedor" id="sector-motos">
     <div class="ver-motos-moto">
         <h2>SPORTER</h2>
-        <img src="<?php bloginfo('template_url'); ?>/img/harleydavidson.png" alt="Harley Davidson 2008 sin fondo">
+        <img src="<?php echo get_img_url("home");?>/harleydavidson.png" alt="Harley Davidson 2008 sin fondo">
     </div>
     <div class="ver-motos-texto">
         <h3>Bikes</h3>
@@ -47,14 +51,14 @@
 </div>
 
 <!-- Ver Autos -->
-<div class="ver-productos-contenedor" id="sector-ver">
+<div class="ver-productos-contenedor home-sector-contenedor" id="sector-ver">
     <div class="ver-productos-texto-contenedor">
         <h3>CLASSIC CAR</h3>
         <a href="<?php echo get_cat_link_custom("cars");?>">VER AUTOS</a>
     </div>
 
     <div class="ver-productos-auto-contenedor">
-        <img src="<?php bloginfo('template_url'); ?>/img/FordMustang1968-con-sombra-2.png" alt="Ford mustang 1968 V8">
+        <img src="<?php echo get_img_url("home");?>/FordMustang1968-con-sombra-2.png" alt="Ford mustang 1968 V8">
         <h3>1968</h3>
     </div>
 
@@ -63,10 +67,10 @@
 
 
 <!-- Daily Cars -->
-<div class="ver-daily-contenedor">
+<div class="ver-daily-contenedor home-sector-contenedor">
     <div class="ver-daily-auto">
         <h2>SPORT</h2>
-        <img src="<?php bloginfo('template_url'); ?>/img/mercedez-a250.png" alt="Mercedez Benz a250. Página ClassicCars Buenos Aires.">
+        <img src="<?php echo get_img_url("home");?>/mercedez-a250.png" alt="Mercedez Benz a250. Página ClassicCars Buenos Aires.">
     </div>
 
     <div class="ver-daily-texto">
@@ -77,7 +81,7 @@
 
 
 <!-- Trucks -->
-<div class="ver-trucks-contenedor">
+<div class="ver-trucks-contenedor home-sector-contenedor">
     <div class="ver-trucks-texto">
         <h3>trucks</h3>
         <a href="<?php echo get_cat_link_custom("trucks");?>">Ver camionetas</a>
@@ -85,16 +89,16 @@
 
     <div class="ver-trucks-auto">
         <h2>f100</h2>
-        <img src="<?php bloginfo('template_url'); ?>/img/ford-f100.png" alt="Ford F100 1974 motor Econo 188 original caja 3 al volante. Página Classic Cars Buenos Aires.">
+        <img src="<?php echo get_img_url("home");?>/ford-f100.png" alt="Ford F100 1974 motor Econo 188 original caja 3 al volante. Página Classic Cars Buenos Aires.">
     </div>
 </div>
 
 
 <!-- Exclusive -->
-<div class="ver-exclusive-contenedor">
+<div class="ver-exclusive-contenedor home-sector-contenedor">
     <div class="ver-exclusive-auto">
         <h2>coachmen</h2>
-        <img src="<?php bloginfo('template_url'); ?>/img/ford-ecoline.png" alt="Ford Econoline Coachmen 1989 20.000 millas reales motor y caja original. Página Classic Cars Buenos Aires.">
+        <img src="<?php echo get_img_url("home");?>/ford-ecoline.png" alt="Ford Econoline Coachmen 1989 20.000 millas reales motor y caja original. Página Classic Cars Buenos Aires.">
     </div>
 
     <div class="ver-exclusive-texto">
@@ -134,14 +138,14 @@
         <div class="contactanos-horarios">
             <span>HORARIOS</span>
             <p>LUN - VIER</p>
-            <p>9AM - 5AM</p>
+            <p>9AM - 5PM</p>
         </div>
         <div class="contactanos-redes">
-            <a href="https://www.instagram.com/classic_cars_ba/" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/classic_cars_ba/" target="_blank" rel="noreferrer" aria-label="instagram">
                 <i class="fab fa-instagram"></i>
             </a>
 
-            <a href="mailto:mailprueba@gmail.com">
+            <a href="mailto:<?php echo variables_general('mail');?>" aria-label="mail">
                 <i class="fas fa-mail-bulk"></i>
             </a>
         </div>

@@ -31,6 +31,13 @@
     }
 }
 
+.banner-video-contenedor-mobile-bg{
+    background-image: url(../img/home/autos-galeria.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .banner-texto-contenedor, .banner-flecha{
     position: absolute;
     display: flex;
@@ -67,6 +74,7 @@
         color: white;
         opacity: .5;
         letter-spacing: 1px;
+        text-align: center;
     }
 
     i{
@@ -90,6 +98,25 @@
     }
 }
 
+@media (max-width:750px){
+    .banner-texto-contenedor{
+        width: 90%;
+        img{
+            margin-top: -3rem;
+        }
+        a{
+            margin-top: 0;
+        }
+    }
+}
+
+// Media Query para Notebooks
+@media (min-aspect-ratio: 260/131){
+    .banner-texto-contenedor{
+        margin-top: -4rem;
+        width: 30%;
+    }
+}
 
 /* Destacados */
 /* ======================================== */
@@ -102,7 +129,7 @@
     padding: 5rem 0;
 
     h3{
-        font-size: 5vw;
+        font-size: 7vw;
         margin: 0;
         margin-bottom: 2rem;
     }
@@ -154,7 +181,7 @@
     .contenedor-hijos{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
     }
 }
@@ -177,6 +204,22 @@
     
         .splide__arrow--next{
             right: 1rem;
+        }
+    }
+}
+
+@media (max-width:800px){
+    .productos-destacados-contenedor{
+        h3{
+            font-size: 5rem;
+        }
+    }
+}
+
+@media (max-width:450px){
+    .productos-destacados-contenedor{
+        h3{
+            font-size: 17vw;
         }
     }
 }
@@ -262,6 +305,50 @@
 
 }
 
+@media (max-width:800px){
+    .ver-motos-contenedor{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25vw;
+
+        &::after{
+            content: "";
+            display: block;
+            width: 100%;
+            background: linear-gradient(180deg, black 50%, rgba(0, 0, 0, 0) 85%);
+            height: 50%;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .ver-motos-texto{
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-bottom: -8vw;
+
+        h3{
+            color: white;
+            font-size: 5rem;
+            font-weight: 100;
+            letter-spacing: 2px;
+        }
+    }
+
+    .ver-motos-moto{
+        width: 80%;
+        h2{
+            left: 50%;
+            font-size: 25vw;
+        }
+
+        img{
+            margin-bottom: -20vw;
+        }
+    }
+}
 
 /* Busca tu classic Car */
 /* ======================================== */
@@ -292,7 +379,6 @@
     justify-content: center;
     align-items: flex-start;
     width: 30%;
-    min-width: 22rem;
     padding-left: $padding-contenedor-texto-sectores;
     color: white;
 
@@ -314,6 +400,7 @@
 
 .ver-productos-auto-contenedor{
     position: relative;
+    width: 70%;
 
     h3{
         color: white;
@@ -345,7 +432,54 @@
     opacity: .3;
 }
 
+@media(max-width:800px){
+    .ver-productos-contenedor{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 4rem;
+        margin-bottom: 25vw;
 
+        &::before{
+            background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0) 100%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+        }
+    }
+
+    .ver-productos-texto-contenedor{
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        h3{
+            color: white;
+            font-size: 15vw;
+            font-weight: 100;
+            letter-spacing: 2px;
+        }
+    }
+
+    .ver-productos-auto-contenedor{
+        width: 90%;
+
+        h3{
+            left: 50%;
+            transform: translateX(-50%);
+            right: unset;
+            bottom: 30%;
+            font-size: 30vw;
+            top: unset;
+        }
+    }
+
+    .ver-productos-auto-descripcion{
+        display: none;
+    }
+}
 
 /* Sector Daily Cars */
 /* ======================================== */
@@ -412,6 +546,43 @@
     }
 }
 
+@media(max-width:800px){
+    .ver-daily-contenedor{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25vw;
+        padding-top: 4rem;
+    }
+
+    .ver-daily-auto{
+        width: 80%;
+        h2{
+            left: 50%;
+            transform: translateX(-50%);
+            top: unset;
+            bottom: 25%;
+            font-size: 30vw;
+        }
+        img{
+            padding: 0;
+        }
+    }
+
+    .ver-daily-texto{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+
+        h3{
+            font-size: 15vw;
+            font-weight: 100;
+            letter-spacing: 2px;
+        }
+    }
+}
 
 
 /* Sector Truck */
@@ -486,6 +657,7 @@
     justify-content: center;
     align-items: flex-start;
     padding-left: $padding-contenedor-texto-sectores;
+    z-index: 2;
 
     a{
         @include btn-general;
@@ -497,6 +669,50 @@
     }
 }
 
+@media(max-width:800px){
+    .ver-trucks-contenedor{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25vw;
+        padding-top: 4rem;
+
+        &::before{
+            width: 60%;
+        }
+
+        &::after{
+            width: 50%;
+        }
+    }
+
+    .ver-trucks-auto{
+        width: 80%;
+        h2{
+            display: none;
+        }
+        img{
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .ver-trucks-texto{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        margin-bottom: -8vw;
+
+        h3{
+            font-size: 5rem;
+            color: white;
+            font-weight: 100;
+            letter-spacing: 2px;
+        }
+    }
+}
 
 
 /* Sector Exclusive */
@@ -592,11 +808,57 @@
     }
 }
 
+@media(max-width:800px){
+    .ver-exclusive-contenedor{
+        margin: 0;
+        margin-bottom: 25vw;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding-top: 4rem;
+
+        &::after{
+            width: 60%;
+            left: 7%;
+        }
+    }
+
+    .ver-exclusive-auto{
+        width: 80%;
+        h2{
+            top: unset;
+            font-size: 25vw;
+            bottom: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        img{
+            transform: rotateY(180deg) translateY(45%);
+        }
+    }
+
+    .ver-exclusive-texto{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        margin-bottom: -8vw;
+
+        h3{
+            font-size: 5rem;
+            color: white;
+            font-weight: 100;
+            letter-spacing: 2px;
+        }
+    }
+}
+
 
 /* Sobre nosotros */
 /* =========================================== */
 .nosotros-contenedor{
-    background-image: url(../img/crew.jpg);
+    background-image: url(../img/home/crew.jpg);
     text-align: center;
     background-repeat: no-repeat;
     vertical-align: middle;
@@ -640,6 +902,18 @@
     }
 }
 
+@media (max-width:800px){
+    .nosotros-contenedor{
+        height: unset;
+        padding: 2rem;
+        h3{
+            margin-top: 0;
+            font-size: 14vw;
+            font-weight: 100;
+            letter-spacing: 2px;
+        }
+    }
+}
 
 /* Contactanos */
 /* =========================================== */
@@ -651,7 +925,7 @@
     align-items: center;
     text-align: center;
     margin-top: 10rem;
-    background-image: url(../img/Recepcion.jpg);
+    background-image: url(../img/home/Recepcion.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -708,7 +982,6 @@
     justify-content: space-evenly;
     width: 50%;
     font-size: 2rem;
-    min-width: 25rem;
 
     span{
         color: red;
@@ -721,6 +994,7 @@
 }
 
 .contactanos-redes{
+    margin-top: 2rem;
     a{
         color: white;
         opacity: .5;
@@ -741,4 +1015,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width:800px){
+    .contactanos-contenedor{
+        h3{
+            font-size: 15vw;
+            letter-spacing: 2px;
+            font-weight: 100;
+        }
+    }
+    .contactanos-horarios{
+        flex-direction: column;
+    }
+
+    .contactanos-contenedor .contactanos-footer{
+        position: unset;
+        margin-top: 3rem;
+
+        .contactanos-redes{
+            position: absolute;
+            bottom: 2rem;
+            margin: 0;
+        }
+    }
 }

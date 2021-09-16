@@ -1,0 +1,521 @@
+@import "variables.scss";
+
+/* Taller */
+#banner-taller-contenedor{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+
+    .banner-taller-fondo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .banner-taller-motor-contenedor{
+        position: relative;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        h2{
+            font-weight: 100;
+            position: absolute;
+            bottom: 10%;
+            font-size: 15rem;
+            z-index: 1;
+            margin: 0;
+            color: white;
+            opacity: .3;
+        }
+        img{
+            width: 100%;
+            max-width: 18rem;
+            z-index: 2;
+        }
+    }
+
+    .banner-taller-botones-contenedor{
+        margin-top: auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 20rem;
+
+        a{
+            color: white;
+            position: relative;
+            font-size: 2rem;
+            transition: ease 300ms;
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 3px;
+                background: red;
+                transition: ease 300ms;
+                z-index: -1;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &:hover{
+                &:before{
+                    // width: 0;
+                    height: 110%;
+                    width: 150%;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+
+    .banner-taller-descripcion{
+        margin: 0;
+        margin-top: 3rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: white;
+        opacity: .5;
+        letter-spacing: 1px;
+
+        span{
+            color: red;
+        }
+    }
+}
+
+#contenedor-tienda-taller{
+    #woocommerce-tienda{
+
+        // Lista productos
+        .products{
+            li{
+                border-radius:20px ;
+                position: relative;
+                transition: ease 300ms;
+                overflow: hidden;
+                .button{
+                    display: none;
+                }
+
+                h2{
+                    font-weight: 100;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    transition: ease 300ms;
+                    color: white;
+                    z-index: 2;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0;
+                }
+
+                &:hover{
+                    @include overlay;
+
+                    h2{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    #banner-taller-contenedor{
+        .banner-taller-motor-contenedor{
+            img{
+                width: 20vw;
+            }
+        }
+    }
+    
+}
+
+@media (max-width:500px){
+    #banner-taller-contenedor{
+        .banner-taller-motor-contenedor{
+            img{
+                width: 50vw;
+            }
+
+            h2{
+                font-size: 35vw;
+                bottom: 22%;
+            }
+        }
+
+        .banner-taller-botones-contenedor{
+            flex-direction: column;
+            a{
+                font-size: 1.5rem;
+                margin: .5rem 0;
+            }
+        }
+
+        .banner-taller-descripcion{
+            font-size: 1.3rem;
+            margin-top: 2rem;
+        }
+    }
+}
+
+// Media Query para Notebooks
+@media (min-aspect-ratio: 260/131){
+    #banner-taller-contenedor{
+        .banner-taller-motor-contenedor{
+            width: 20%;
+            img{
+                margin-top: -10vw;
+            }
+        }
+    }
+}
+
+/* Cars (ClassicCars) */
+#banner-cars-categoria{
+    overflow: hidden;
+    .ver-productos-contenedor{
+        margin-bottom: 15vw;
+    }
+    .ver-productos-texto-contenedor{
+        h3{
+            font-size: 8vw;
+            line-height: 8vw;
+            font-weight: 100;
+            span{
+                color: red;
+            }
+        }
+    }
+
+    .ver-productos-auto-contenedor{
+        img{
+            animation-name: cars-banner;
+            animation-duration: 1000ms;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@media(max-width:800px){
+    #banner-cars-categoria{
+        margin-bottom: 20vw;
+        .ver-productos-contenedor{
+            padding-top: 0;
+        }
+        .ver-productos-texto-contenedor{
+            position: absolute;
+            top: 61%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h3{
+                font-size: 18vw;
+                letter-spacing: 1vw;
+            }
+        }
+
+        .ver-productos-auto-contenedor{
+            h3{
+                display: none;
+            }
+
+            img{
+                padding-top: 15vw;
+            }
+        }
+    }
+}
+
+
+@keyframes cars-banner{
+    0%{
+        transform: translateY(30%) translateX(100%);
+    }
+    100%{
+        transform: translateY(30%) translateX(0);
+    }
+}
+
+
+/* Daily Cars */
+#banner-daily-categoria{
+    overflow: hidden;
+    .ver-daily-contenedor{
+        margin-bottom: 15vw;
+    }
+    .ver-daily-texto{
+        h3{
+            font-size: 8vw;
+            line-height: 8vw;
+            font-weight: 100;
+            span{
+                color: red;
+            }
+        }
+    }
+
+    .ver-daily-auto{
+        img{
+            animation-name: daily-banner;
+            animation-duration: 1000ms;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@media(max-width:800px){
+    #banner-daily-categoria{
+        .ver-daily-contenedor{
+            position: relative;
+            padding-top: 0;
+        }
+        .ver-daily-texto{
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h3{
+                font-size: 15vw;
+                letter-spacing: 1vw;
+            }
+        }
+
+        .ver-daily-auto{
+            h2{
+                display: none;
+            }
+            img{
+                padding-top: 8vw;
+            }
+        }
+    }
+}
+
+@keyframes daily-banner{
+    0%{
+        transform: translateY(25%) translateX(-100%);
+    }
+    100%{
+        transform: translateY(25%) translateX(0);
+    }
+}
+
+/* Trucks */
+#banner-trucks-categoria{
+    overflow: hidden;
+    .ver-trucks-contenedor{
+        margin-bottom: 11vw;
+    }
+    .ver-trucks-texto{
+        h3{
+            font-size: 8vw;
+            line-height: 8vw;
+            font-weight: 100;
+            span{
+                color: red;
+            }
+        }
+    }
+
+    .ver-trucks-auto{
+        img{
+            animation-name: trucks-banner;
+            animation-duration: 1000ms;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@media(max-width:800px){
+    #banner-trucks-categoria{
+        .ver-trucks-contenedor{
+            margin-bottom: 20vw;
+            position: relative;
+            padding-top: 0;
+            background: #61c0c7;
+        }
+        .ver-trucks-texto{
+            position: absolute;
+            top: 54%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h3{
+                font-size: 24vw;
+                letter-spacing: 1vw;
+            }
+        }
+
+        .ver-trucks-auto{
+            h2{
+                display: none;
+            }
+            img{
+                animation-name: unset;
+                padding-top: 16vw;
+            }
+        }
+    }
+}
+
+@keyframes trucks-banner{
+    0%{
+        transform: rotateY(180deg) translateY(35%) translateX(-100%);
+    }
+    100%{
+        transform: rotateY(180deg) translateY(35%) translateX(0%);
+    }
+}
+
+/* Motos */
+#banner-motos-categoria{
+    overflow: hidden;
+    .ver-motos-contenedor{
+        margin-bottom: 11vw;
+    }
+    .ver-motos-texto{
+        h3{
+            font-size: 12vw;
+            line-height: 12vw;
+            font-weight: 100;
+            span{
+                color: red;
+            }
+        }
+    }
+
+    .ver-motos-moto{
+        img{
+            animation-duration: 1000ms;
+            animation-fill-mode: forwards;
+            animation-name: moto-banner;
+        }
+    }
+}
+
+@media(max-width:800px){
+    #banner-motos-categoria{
+        .ver-motos-contenedor{
+            margin-bottom: 10vw;
+            position: relative;
+            padding-top: 0;
+        }
+        .ver-motos-texto{
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h3{
+                font-size: 24vw;
+                letter-spacing: 1vw;
+            }
+        }
+
+        .ver-motos-moto{
+            z-index: 2;
+            h2{
+                display: none;
+            }
+            img{
+                padding-top: 16vw;
+            }
+        }
+    }
+}
+
+@keyframes moto-banner{
+    0%{
+        transform: translateX(-100%) rotateY(180deg);
+    }
+    100%{
+        transform: translateX(0%) rotateY(180deg);
+    }
+}
+
+
+
+/* Exclusive */
+#banner-exclusive-categoria{
+    overflow: hidden;
+    .ver-exclusive-contenedor{
+        margin-top: 0;
+        margin-bottom: 15vw;
+    }
+    .ver-exclusive-texto{
+        h3{
+            font-size: 10vw;
+            line-height: 8vw;
+            font-weight: 100;
+            span{
+                color: red;
+            }
+        }
+    }
+
+    .ver-exclusive-auto{
+        img{
+            padding-top: 3rem;
+            animation-name: cars-banner-reverse;
+            animation-duration: 1000ms;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@media(max-width:800px){
+    #banner-exclusive-categoria{
+        .ver-exclusive-contenedor{
+            margin-bottom: 22vw;
+            position: relative;
+            padding-top: 0;
+        }
+        .ver-exclusive-texto{
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h3{
+                font-size: 20vw;
+                letter-spacing: 1vw;
+            }
+        }
+
+        .ver-exclusive-auto{
+            h2{
+                display: none;
+            }
+            img{
+                padding-top: 20vw;
+            }
+        }
+    }
+}
+
+@keyframes cars-banner-reverse {
+    0%{
+        transform: rotateY(180deg) translateY(35%) translateX(100%);
+    }
+    100%{
+        transform: rotateY(180deg) translateY(35%) translateX(0%);
+    }
+}

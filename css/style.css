@@ -1,79 +1,3 @@
-@font-face {
-  font-family: 'Bebas Neue';
-  src: url(../tipografias/BebasNeue-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: 'Abril Fatface';
-  src: url(../tipografias/AbrilFatface-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Regular.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Thin.ttf) format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Light.ttf) format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Bold.ttf) format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Bebas Neue';
-  src: url(../tipografias/BebasNeue-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: 'Abril Fatface';
-  src: url(../tipografias/AbrilFatface-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Regular.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Thin.ttf) format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Light.ttf) format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Bold.ttf) format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
 /* Banner */
 /* ======================================== */
 .banner-video-contenedor {
@@ -115,6 +39,13 @@
   z-index: 1;
 }
 
+.banner-video-contenedor-mobile-bg {
+  background-image: url(../img/home/autos-galeria.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .banner-texto-contenedor, .banner-flecha {
   position: absolute;
   display: -webkit-box;
@@ -154,6 +85,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
   margin-top: -2rem;
 }
 
@@ -173,6 +108,7 @@
   color: white;
   opacity: .5;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .banner-flecha i {
@@ -216,6 +152,25 @@
   }
 }
 
+@media (max-width: 750px) {
+  .banner-texto-contenedor {
+    width: 90%;
+  }
+  .banner-texto-contenedor img {
+    margin-top: -3rem;
+  }
+  .banner-texto-contenedor a {
+    margin-top: 0;
+  }
+}
+
+@media (min-aspect-ratio: 260 / 131) {
+  .banner-texto-contenedor {
+    margin-top: -4rem;
+    width: 30%;
+  }
+}
+
 /* Destacados */
 /* ======================================== */
 .productos-destacados-contenedor {
@@ -237,7 +192,7 @@
 }
 
 .productos-destacados-contenedor h3 {
-  font-size: 5vw;
+  font-size: 7vw;
   margin: 0;
   margin-bottom: 2rem;
 }
@@ -306,9 +261,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -328,6 +283,18 @@
   }
   .productos-destacados .splide__arrow--next {
     right: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .productos-destacados-contenedor h3 {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .productos-destacados-contenedor h3 {
+    font-size: 17vw;
   }
 }
 
@@ -412,6 +379,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
 }
 
 .ver-motos-texto a:hover {
@@ -444,6 +415,58 @@
   margin: 0;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media (max-width: 800px) {
+  .ver-motos-contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 25vw;
+  }
+  .ver-motos-contenedor::after {
+    content: "";
+    display: block;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, black), color-stop(85%, rgba(0, 0, 0, 0)));
+    background: linear-gradient(180deg, black 50%, rgba(0, 0, 0, 0) 85%);
+    height: 50%;
+    top: 0;
+    left: 0;
+  }
+  .ver-motos-texto {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+    margin-bottom: -8vw;
+  }
+  .ver-motos-texto h3 {
+    color: white;
+    font-size: 5rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+  .ver-motos-moto {
+    width: 80%;
+  }
+  .ver-motos-moto h2 {
+    left: 50%;
+    font-size: 25vw;
+  }
+  .ver-motos-moto img {
+    margin-bottom: -20vw;
+  }
 }
 
 /* Busca tu classic Car */
@@ -494,7 +517,6 @@
       -ms-flex-align: start;
           align-items: flex-start;
   width: 30%;
-  min-width: 22rem;
   padding-left: 5%;
   color: white;
 }
@@ -520,6 +542,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
 }
 
 .ver-productos-texto-contenedor a:hover {
@@ -529,6 +555,7 @@
 
 .ver-productos-auto-contenedor {
   position: relative;
+  width: 70%;
 }
 
 .ver-productos-auto-contenedor h3 {
@@ -559,6 +586,63 @@
   z-index: 3;
   color: white;
   opacity: .3;
+}
+
+@media (max-width: 800px) {
+  .ver-productos-contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 4rem;
+    margin-bottom: 25vw;
+  }
+  .ver-productos-contenedor::before {
+    background: -webkit-gradient(linear, left top, left bottom, from(black), to(rgba(0, 0, 0, 0)));
+    background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0) 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+  }
+  .ver-productos-texto-contenedor {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .ver-productos-texto-contenedor h3 {
+    color: white;
+    font-size: 15vw;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+  .ver-productos-auto-contenedor {
+    width: 90%;
+  }
+  .ver-productos-auto-contenedor h3 {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    right: unset;
+    bottom: 30%;
+    font-size: 30vw;
+    top: unset;
+  }
+  .ver-productos-auto-descripcion {
+    display: none;
+  }
 }
 
 /* Sector Daily Cars */
@@ -650,6 +734,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
 }
 
 .ver-daily-texto a:hover {
@@ -661,6 +749,53 @@
   color: white;
   font-size: 7vw;
   margin: 0;
+}
+
+@media (max-width: 800px) {
+  .ver-daily-contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 25vw;
+    padding-top: 4rem;
+  }
+  .ver-daily-auto {
+    width: 80%;
+  }
+  .ver-daily-auto h2 {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    top: unset;
+    bottom: 25%;
+    font-size: 30vw;
+  }
+  .ver-daily-auto img {
+    padding: 0;
+  }
+  .ver-daily-texto {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+  .ver-daily-texto h3 {
+    font-size: 15vw;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
 }
 
 /* Sector Truck */
@@ -761,6 +896,7 @@
       -ms-flex-align: start;
           align-items: flex-start;
   padding-left: 5%;
+  z-index: 2;
 }
 
 .ver-trucks-texto a {
@@ -772,6 +908,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
 }
 
 .ver-trucks-texto a:hover {
@@ -784,6 +924,57 @@
   font-size: 7vw;
   margin: 0;
   color: black;
+}
+
+@media (max-width: 800px) {
+  .ver-trucks-contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 25vw;
+    padding-top: 4rem;
+  }
+  .ver-trucks-contenedor::before {
+    width: 60%;
+  }
+  .ver-trucks-contenedor::after {
+    width: 50%;
+  }
+  .ver-trucks-auto {
+    width: 80%;
+  }
+  .ver-trucks-auto h2 {
+    display: none;
+  }
+  .ver-trucks-auto img {
+    padding: 0;
+    margin: 0;
+  }
+  .ver-trucks-texto {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-bottom: -8vw;
+  }
+  .ver-trucks-texto h3 {
+    font-size: 5rem;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
 }
 
 /* Sector Exclusive */
@@ -884,6 +1075,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
 }
 
 .ver-exclusive-texto a:hover {
@@ -915,10 +1110,65 @@
   }
 }
 
+@media (max-width: 800px) {
+  .ver-exclusive-contenedor {
+    margin: 0;
+    margin-bottom: 25vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 4rem;
+  }
+  .ver-exclusive-contenedor::after {
+    width: 60%;
+    left: 7%;
+  }
+  .ver-exclusive-auto {
+    width: 80%;
+  }
+  .ver-exclusive-auto h2 {
+    top: unset;
+    font-size: 25vw;
+    bottom: 25%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .ver-exclusive-auto img {
+    -webkit-transform: rotateY(180deg) translateY(45%);
+            transform: rotateY(180deg) translateY(45%);
+  }
+  .ver-exclusive-texto {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-bottom: -8vw;
+  }
+  .ver-exclusive-texto h3 {
+    font-size: 5rem;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+}
+
 /* Sobre nosotros */
 /* =========================================== */
 .nosotros-contenedor {
-  background-image: url(../img/crew.jpg);
+  background-image: url(../img/home/crew.jpg);
   text-align: center;
   background-repeat: no-repeat;
   vertical-align: middle;
@@ -981,6 +1231,19 @@
   margin-top: 0;
 }
 
+@media (max-width: 800px) {
+  .nosotros-contenedor {
+    height: unset;
+    padding: 2rem;
+  }
+  .nosotros-contenedor h3 {
+    margin-top: 0;
+    font-size: 14vw;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+}
+
 /* Contactanos */
 /* =========================================== */
 .contactanos-contenedor {
@@ -1000,7 +1263,7 @@
           align-items: center;
   text-align: center;
   margin-top: 10rem;
-  background-image: url(../img/Recepcion.jpg);
+  background-image: url(../img/home/Recepcion.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1064,6 +1327,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
   margin: 0 1rem;
   display: inline-block;
 }
@@ -1086,7 +1353,6 @@
           justify-content: space-evenly;
   width: 50%;
   font-size: 2rem;
-  min-width: 25rem;
 }
 
 .contactanos-horarios span {
@@ -1095,6 +1361,10 @@
 
 .contactanos-horarios p {
   margin: 0;
+}
+
+.contactanos-redes {
+  margin-top: 2rem;
 }
 
 .contactanos-redes a {
@@ -1127,46 +1397,31 @@
           align-items: center;
 }
 
+@media (max-width: 800px) {
+  .contactanos-contenedor h3 {
+    font-size: 15vw;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  .contactanos-horarios {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contactanos-contenedor .contactanos-footer {
+    position: unset;
+    margin-top: 3rem;
+  }
+  .contactanos-contenedor .contactanos-footer .contactanos-redes {
+    position: absolute;
+    bottom: 2rem;
+    margin: 0;
+  }
+}
+
 #woocommerce-tienda {
   padding-top: 8rem;
-}
-
-@font-face {
-  font-family: 'Bebas Neue';
-  src: url(../tipografias/BebasNeue-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: 'Abril Fatface';
-  src: url(../tipografias/AbrilFatface-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Regular.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Thin.ttf) format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Light.ttf) format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../tipografias/Montserrat-Bold.ttf) format("truetype");
-  font-weight: bold;
-  font-style: normal;
 }
 
 .woocommerce .products {
@@ -1220,6 +1475,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
   display: inline-block;
   font-size: 1rem;
   padding: .2rem 1rem;
@@ -1245,20 +1504,36 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-areas: "imagenes imagenes descripcion"  "relacionados relacionados relacionados";
+  -ms-grid-rows: .2fr 1fr;
+      grid-template-rows: .2fr 1fr;
+      grid-template-areas: "imagenes imagenes meta"  "imagenes imagenes descripcion"  "relacionados relacionados relacionados";
 }
 
 .product-template-default .single-product-custom-wrapper .woocommerce-product-gallery {
   -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: imagenes;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .product-template-default .single-product-custom-wrapper .summary {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
-  grid-area: descripcion;
+  grid-area: meta;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1292,10 +1567,11 @@
   font-weight: 300;
   opacity: .7;
   margin: 0;
+  font-size: 18px;
 }
 
 .product-template-default .single-product-custom-wrapper .summary .product_meta {
-  margin-top: 2rem;
+  margin-top: 1rem;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   width: 50%;
   max-width: 15rem;
@@ -1306,8 +1582,47 @@
   color: red;
 }
 
-.product-template-default .single-product-custom-wrapper .related {
+.product-template-default .single-product-custom-wrapper .woocommerce-tabs.wc-tabs-wrapper {
   -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: descripcion;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #e4e4e4;
+}
+
+.product-template-default .single-product-custom-wrapper .woocommerce-tabs.wc-tabs-wrapper .tabs.wc-tabs {
+  display: none;
+}
+
+.product-template-default .single-product-custom-wrapper .woocommerce-tabs.wc-tabs-wrapper #tab-description p {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.7;
+  margin-top: 1rem;
+}
+
+.product-template-default .single-product-custom-wrapper .woocommerce-tabs.wc-tabs-wrapper #tab-description h2 {
+  display: none;
+}
+
+.product-template-default .single-product-custom-wrapper .related {
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: relacionados;
@@ -1362,6 +1677,10 @@
   cursor: pointer;
 }
 
+.woocommerce-product-gallery .woocommerce-product-gallery__wrapper {
+  margin: 0;
+}
+
 .woocommerce-product-gallery .flex-control-thumbs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1409,10 +1728,14 @@
   border-radius: 15px;
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
+  background-color: white;
 }
 
 .woocommerce-product-gallery .flex-control-thumbs .flex-active {
-  border: 2px solid #e2a840;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
 .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
@@ -1445,7 +1768,88 @@
   .product-template-default .single-product-custom-wrapper {
     -ms-grid-columns: 1fr 2fr 1fr 1fr;
         grid-template-columns: 1fr 2fr 1fr 1fr;
-        grid-template-areas: "imagenes imagenes descripcion descripcion"  "relacionados relacionados relacionados relacionados";
+        grid-template-areas: "imagenes imagenes meta meta" "imagenes imagenes descripcion descripcion" "relacionados relacionados relacionados relacionados";
+  }
+}
+
+@media (max-width: 700px) {
+  .product-template-default .single-product-custom-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 4rem;
+    margin-top: 0;
+  }
+  .product-template-default .single-product-custom-wrapper .summary {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .product-template-default .single-product-custom-wrapper .summary h1 {
+    margin: 0;
+  }
+  .product-template-default .single-product-custom-wrapper .summary .product_meta {
+    margin-top: 1rem;
+  }
+  .product-template-default .single-product-custom-wrapper .summary .woocommerce-product-details__short-description {
+    margin: 10px 0;
+  }
+  .product-template-default .single-product-custom-wrapper .summary .woocommerce-product-details__short-description p {
+    opacity: 0.5;
+  }
+  .product-template-default .single-product-custom-wrapper .woocommerce-tabs.wc-tabs-wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    padding-top: 0;
+  }
+  .product-template-default .single-product-custom-wrapper .woocommerce-tabs.wc-tabs-wrapper #tab-description h2 {
+    display: none;
+  }
+  .product-template-default .single-product-custom-wrapper .woocommerce-tabs.wc-tabs-wrapper #tab-description p {
+    font-size: 16px;
+    opacity: 1;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  .woocommerce-product-gallery .flex-control-thumbs {
+    margin: 1rem 0;
+    padding: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .woocommerce-product-gallery .flex-control-thumbs li {
+    width: 25vw;
+    height: 25vw;
+    min-width: 5rem;
+    max-width: 8rem;
+    min-height: 5rem;
+    max-height: 8rem;
+  }
+  .woocommerce-product-gallery .woocommerce-product-gallery__wrapper {
+    margin: 0;
+  }
+  .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
+    top: 20px;
+    left: 20px;
   }
 }
 
@@ -1770,6 +2174,7 @@
   color: red;
   opacity: .5;
   font-weight: 500;
+  width: 90%;
 }
 
 #woocommerce-tienda .tienda-sector-slider .tienda-sector-slide .categoria-slide-texto h2 {
@@ -1777,7 +2182,7 @@
   margin: 0;
   margin-bottom: 2rem;
   color: black;
-  line-height: 6rem;
+  line-height: 5vw;
 }
 
 #woocommerce-tienda .tienda-sector-slider .tienda-sector-slide .categoria-slide-texto a {
@@ -1853,6 +2258,10 @@
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   text-decoration: none;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  text-align: center;
   display: inline-block;
   font-size: 1rem;
   padding: .2rem 1rem;
@@ -1965,6 +2374,7 @@
 }
 
 #woocommerce-tienda .tienda-slider-paginator .paginator-btn {
+  overflow: hidden;
   width: 3rem;
   height: 3rem;
   display: -webkit-box;
@@ -2000,6 +2410,15 @@
           transform: scale(1.3);
 }
 
+#woocommerce-tienda .titulo-slider-paginator p {
+  color: red;
+  text-align: center;
+  opacity: .5;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+}
+
 #woocommerce-tienda .tienda-todos-productos-contenedor {
   margin-top: 5rem;
   padding: 0 7vw;
@@ -2007,9 +2426,10 @@
 
 #woocommerce-tienda .tienda-todos-productos-contenedor .texto h2 {
   font-weight: 100;
-  font-size: 5rem;
+  font-size: 4rem;
   letter-spacing: 2px;
   margin: 0;
+  line-height: 5rem;
 }
 
 #woocommerce-tienda .tienda-todos-productos-contenedor .texto p {
@@ -2062,13 +2482,757 @@
   }
 }
 
+@media (max-width: 850px) {
+  #woocommerce-tienda #banner-tienda-contenedor h1 {
+    font-size: 15vw;
+    line-height: 14vw;
+  }
+  #woocommerce-tienda #banner-tienda-contenedor p {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  #woocommerce-tienda #tienda-sector-btn-img-categorias .tienda-categorias-btn-contenedor a svg {
+    width: 45%;
+  }
+  #woocommerce-tienda #tienda-sector-btn-img-categorias .tienda-categorias-btn-contenedor a span {
+    font-size: 18px;
+  }
+  #woocommerce-tienda .tienda-todos-productos-contenedor .products {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 650px) {
+  #woocommerce-tienda #banner-tienda-contenedor {
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #woocommerce-tienda #banner-tienda-contenedor h1 {
+    width: 90%;
+  }
+  #woocommerce-tienda #tienda-sector-btn-img-categorias {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #woocommerce-tienda #tienda-sector-btn-img-categorias .tienda-categorias-btn {
+    padding: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #woocommerce-tienda #tienda-sector-btn-img-categorias .tienda-categorias-btn .tienda-categorias-btn-contenedor {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #woocommerce-tienda #tienda-sector-btn-img-categorias .tienda-categorias-btn .tienda-categorias-btn-contenedor a {
+    width: 25vw;
+    height: 25vw;
+    min-width: 6rem;
+    min-height: 6rem;
+  }
+  #woocommerce-tienda #tienda-sector-btn-img-categorias .tienda-categorias-img {
+    display: none;
+  }
+  #woocommerce-tienda .tienda-sector-slider .tienda-sector-slide {
+    height: 36rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #woocommerce-tienda .tienda-sector-slider .tienda-sector-slide .categoria-slide-texto {
+    padding: 2rem 1rem;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    height: 30%;
+  }
+  #woocommerce-tienda .tienda-sector-slider .tienda-sector-slide .categoria-slide-texto h2 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+  }
+  #woocommerce-tienda .tienda-sector-slider .tienda-sector-slide .categoria-slide-slider {
+    width: 100%;
+  }
+  #woocommerce-tienda .tienda-todos-productos-contenedor {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #woocommerce-tienda .tienda-todos-productos-contenedor .texto {
+    text-align: center;
+  }
+  #woocommerce-tienda .tienda-todos-productos-contenedor .texto h2 {
+    font-size: 10vw;
+  }
+  #woocommerce-tienda .tienda-todos-productos-contenedor .texto p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  #woocommerce-tienda #banner-tienda-contenedor h1 {
+    font-size: 20vw;
+    line-height: 18vw;
+  }
+  #woocommerce-tienda #banner-tienda-contenedor p {
+    width: 90%;
+  }
+  #woocommerce-tienda .tienda-sector-slider .categoria-slide-slider .splide__arrows .splide__arrow--next {
+    right: 1rem;
+  }
+  #woocommerce-tienda .tienda-sector-slider .categoria-slide-slider .splide__list li {
+    max-width: 18rem;
+    min-width: 18rem;
+  }
+}
+
+@media (min-aspect-ratio: 260 / 131) {
+  #woocommerce-tienda #banner-tienda-contenedor {
+    height: 100vh;
+  }
+}
+
+/* Taller */
+#banner-taller-contenedor {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+#banner-taller-contenedor .banner-taller-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#banner-taller-contenedor .banner-taller-motor-contenedor {
+  position: relative;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#banner-taller-contenedor .banner-taller-motor-contenedor h2 {
+  font-weight: 100;
+  position: absolute;
+  bottom: 10%;
+  font-size: 15rem;
+  z-index: 1;
+  margin: 0;
+  color: white;
+  opacity: .3;
+}
+
+#banner-taller-contenedor .banner-taller-motor-contenedor img {
+  width: 100%;
+  max-width: 18rem;
+  z-index: 2;
+}
+
+#banner-taller-contenedor .banner-taller-botones-contenedor {
+  margin-top: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 20rem;
+}
+
+#banner-taller-contenedor .banner-taller-botones-contenedor a {
+  color: white;
+  position: relative;
+  font-size: 2rem;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+}
+
+#banner-taller-contenedor .banner-taller-botones-contenedor a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: red;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+  z-index: -1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#banner-taller-contenedor .banner-taller-botones-contenedor a:hover:before {
+  height: 110%;
+  width: 150%;
+  border-radius: 20px;
+}
+
+#banner-taller-contenedor .banner-taller-descripcion {
+  margin: 0;
+  margin-top: 3rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+  opacity: .5;
+  letter-spacing: 1px;
+}
+
+#banner-taller-contenedor .banner-taller-descripcion span {
+  color: red;
+}
+
+#contenedor-tienda-taller #woocommerce-tienda .products li {
+  border-radius: 20px;
+  position: relative;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+  overflow: hidden;
+}
+
+#contenedor-tienda-taller #woocommerce-tienda .products li .button {
+  display: none;
+}
+
+#contenedor-tienda-taller #woocommerce-tienda .products li h2 {
+  font-weight: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+  color: white;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+#contenedor-tienda-taller #woocommerce-tienda .products li:hover {
+  position: relative;
+}
+
+#contenedor-tienda-taller #woocommerce-tienda .products li:hover::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#contenedor-tienda-taller #woocommerce-tienda .products li:hover h2 {
+  opacity: 1;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  #banner-taller-contenedor .banner-taller-motor-contenedor img {
+    width: 20vw;
+  }
+}
+
+@media (max-width: 500px) {
+  #banner-taller-contenedor .banner-taller-motor-contenedor img {
+    width: 50vw;
+  }
+  #banner-taller-contenedor .banner-taller-motor-contenedor h2 {
+    font-size: 35vw;
+    bottom: 22%;
+  }
+  #banner-taller-contenedor .banner-taller-botones-contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #banner-taller-contenedor .banner-taller-botones-contenedor a {
+    font-size: 1.5rem;
+    margin: .5rem 0;
+  }
+  #banner-taller-contenedor .banner-taller-descripcion {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (min-aspect-ratio: 260 / 131) {
+  #banner-taller-contenedor .banner-taller-motor-contenedor {
+    width: 20%;
+  }
+  #banner-taller-contenedor .banner-taller-motor-contenedor img {
+    margin-top: -10vw;
+  }
+}
+
+/* Cars (ClassicCars) */
+#banner-cars-categoria {
+  overflow: hidden;
+}
+
+#banner-cars-categoria .ver-productos-contenedor {
+  margin-bottom: 15vw;
+}
+
+#banner-cars-categoria .ver-productos-texto-contenedor h3 {
+  font-size: 8vw;
+  line-height: 8vw;
+  font-weight: 100;
+}
+
+#banner-cars-categoria .ver-productos-texto-contenedor h3 span {
+  color: red;
+}
+
+#banner-cars-categoria .ver-productos-auto-contenedor img {
+  -webkit-animation-name: cars-banner;
+          animation-name: cars-banner;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px) {
+  #banner-cars-categoria {
+    margin-bottom: 20vw;
+  }
+  #banner-cars-categoria .ver-productos-contenedor {
+    padding-top: 0;
+  }
+  #banner-cars-categoria .ver-productos-texto-contenedor {
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  #banner-cars-categoria .ver-productos-texto-contenedor h3 {
+    font-size: 18vw;
+    letter-spacing: 1vw;
+  }
+  #banner-cars-categoria .ver-productos-auto-contenedor h3 {
+    display: none;
+  }
+  #banner-cars-categoria .ver-productos-auto-contenedor img {
+    padding-top: 15vw;
+  }
+}
+
+@-webkit-keyframes cars-banner {
+  0% {
+    -webkit-transform: translateY(30%) translateX(100%);
+            transform: translateY(30%) translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateY(30%) translateX(0);
+            transform: translateY(30%) translateX(0);
+  }
+}
+
+@keyframes cars-banner {
+  0% {
+    -webkit-transform: translateY(30%) translateX(100%);
+            transform: translateY(30%) translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateY(30%) translateX(0);
+            transform: translateY(30%) translateX(0);
+  }
+}
+
+/* Daily Cars */
+#banner-daily-categoria {
+  overflow: hidden;
+}
+
+#banner-daily-categoria .ver-daily-contenedor {
+  margin-bottom: 15vw;
+}
+
+#banner-daily-categoria .ver-daily-texto h3 {
+  font-size: 8vw;
+  line-height: 8vw;
+  font-weight: 100;
+}
+
+#banner-daily-categoria .ver-daily-texto h3 span {
+  color: red;
+}
+
+#banner-daily-categoria .ver-daily-auto img {
+  -webkit-animation-name: daily-banner;
+          animation-name: daily-banner;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px) {
+  #banner-daily-categoria .ver-daily-contenedor {
+    position: relative;
+    padding-top: 0;
+  }
+  #banner-daily-categoria .ver-daily-texto {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  #banner-daily-categoria .ver-daily-texto h3 {
+    font-size: 15vw;
+    letter-spacing: 1vw;
+  }
+  #banner-daily-categoria .ver-daily-auto h2 {
+    display: none;
+  }
+  #banner-daily-categoria .ver-daily-auto img {
+    padding-top: 8vw;
+  }
+}
+
+@-webkit-keyframes daily-banner {
+  0% {
+    -webkit-transform: translateY(25%) translateX(-100%);
+            transform: translateY(25%) translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(25%) translateX(0);
+            transform: translateY(25%) translateX(0);
+  }
+}
+
+@keyframes daily-banner {
+  0% {
+    -webkit-transform: translateY(25%) translateX(-100%);
+            transform: translateY(25%) translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(25%) translateX(0);
+            transform: translateY(25%) translateX(0);
+  }
+}
+
+/* Trucks */
+#banner-trucks-categoria {
+  overflow: hidden;
+}
+
+#banner-trucks-categoria .ver-trucks-contenedor {
+  margin-bottom: 11vw;
+}
+
+#banner-trucks-categoria .ver-trucks-texto h3 {
+  font-size: 8vw;
+  line-height: 8vw;
+  font-weight: 100;
+}
+
+#banner-trucks-categoria .ver-trucks-texto h3 span {
+  color: red;
+}
+
+#banner-trucks-categoria .ver-trucks-auto img {
+  -webkit-animation-name: trucks-banner;
+          animation-name: trucks-banner;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px) {
+  #banner-trucks-categoria .ver-trucks-contenedor {
+    margin-bottom: 20vw;
+    position: relative;
+    padding-top: 0;
+    background: #61c0c7;
+  }
+  #banner-trucks-categoria .ver-trucks-texto {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  #banner-trucks-categoria .ver-trucks-texto h3 {
+    font-size: 24vw;
+    letter-spacing: 1vw;
+  }
+  #banner-trucks-categoria .ver-trucks-auto h2 {
+    display: none;
+  }
+  #banner-trucks-categoria .ver-trucks-auto img {
+    -webkit-animation-name: unset;
+            animation-name: unset;
+    padding-top: 16vw;
+  }
+}
+
+@-webkit-keyframes trucks-banner {
+  0% {
+    -webkit-transform: rotateY(180deg) translateY(35%) translateX(-100%);
+            transform: rotateY(180deg) translateY(35%) translateX(-100%);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg) translateY(35%) translateX(0%);
+            transform: rotateY(180deg) translateY(35%) translateX(0%);
+  }
+}
+
+@keyframes trucks-banner {
+  0% {
+    -webkit-transform: rotateY(180deg) translateY(35%) translateX(-100%);
+            transform: rotateY(180deg) translateY(35%) translateX(-100%);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg) translateY(35%) translateX(0%);
+            transform: rotateY(180deg) translateY(35%) translateX(0%);
+  }
+}
+
+/* Motos */
+#banner-motos-categoria {
+  overflow: hidden;
+}
+
+#banner-motos-categoria .ver-motos-contenedor {
+  margin-bottom: 11vw;
+}
+
+#banner-motos-categoria .ver-motos-texto h3 {
+  font-size: 12vw;
+  line-height: 12vw;
+  font-weight: 100;
+}
+
+#banner-motos-categoria .ver-motos-texto h3 span {
+  color: red;
+}
+
+#banner-motos-categoria .ver-motos-moto img {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: moto-banner;
+          animation-name: moto-banner;
+}
+
+@media (max-width: 800px) {
+  #banner-motos-categoria .ver-motos-contenedor {
+    margin-bottom: 10vw;
+    position: relative;
+    padding-top: 0;
+  }
+  #banner-motos-categoria .ver-motos-texto {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  #banner-motos-categoria .ver-motos-texto h3 {
+    font-size: 24vw;
+    letter-spacing: 1vw;
+  }
+  #banner-motos-categoria .ver-motos-moto {
+    z-index: 2;
+  }
+  #banner-motos-categoria .ver-motos-moto h2 {
+    display: none;
+  }
+  #banner-motos-categoria .ver-motos-moto img {
+    padding-top: 16vw;
+  }
+}
+
+@-webkit-keyframes moto-banner {
+  0% {
+    -webkit-transform: translateX(-100%) rotateY(180deg);
+            transform: translateX(-100%) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%) rotateY(180deg);
+            transform: translateX(0%) rotateY(180deg);
+  }
+}
+
+@keyframes moto-banner {
+  0% {
+    -webkit-transform: translateX(-100%) rotateY(180deg);
+            transform: translateX(-100%) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%) rotateY(180deg);
+            transform: translateX(0%) rotateY(180deg);
+  }
+}
+
+/* Exclusive */
+#banner-exclusive-categoria {
+  overflow: hidden;
+}
+
+#banner-exclusive-categoria .ver-exclusive-contenedor {
+  margin-top: 0;
+  margin-bottom: 15vw;
+}
+
+#banner-exclusive-categoria .ver-exclusive-texto h3 {
+  font-size: 10vw;
+  line-height: 8vw;
+  font-weight: 100;
+}
+
+#banner-exclusive-categoria .ver-exclusive-texto h3 span {
+  color: red;
+}
+
+#banner-exclusive-categoria .ver-exclusive-auto img {
+  padding-top: 3rem;
+  -webkit-animation-name: cars-banner-reverse;
+          animation-name: cars-banner-reverse;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px) {
+  #banner-exclusive-categoria .ver-exclusive-contenedor {
+    margin-bottom: 22vw;
+    position: relative;
+    padding-top: 0;
+  }
+  #banner-exclusive-categoria .ver-exclusive-texto {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  #banner-exclusive-categoria .ver-exclusive-texto h3 {
+    font-size: 20vw;
+    letter-spacing: 1vw;
+  }
+  #banner-exclusive-categoria .ver-exclusive-auto h2 {
+    display: none;
+  }
+  #banner-exclusive-categoria .ver-exclusive-auto img {
+    padding-top: 20vw;
+  }
+}
+
+@-webkit-keyframes cars-banner-reverse {
+  0% {
+    -webkit-transform: rotateY(180deg) translateY(35%) translateX(100%);
+            transform: rotateY(180deg) translateY(35%) translateX(100%);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg) translateY(35%) translateX(0%);
+            transform: rotateY(180deg) translateY(35%) translateX(0%);
+  }
+}
+
+@keyframes cars-banner-reverse {
+  0% {
+    -webkit-transform: rotateY(180deg) translateY(35%) translateX(100%);
+            transform: rotateY(180deg) translateY(35%) translateX(100%);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg) translateY(35%) translateX(0%);
+            transform: rotateY(180deg) translateY(35%) translateX(0%);
+  }
+}
+
 /* Generales */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -2113,6 +3277,10 @@ a {
   z-index: 99;
   top: 0;
   left: 0;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 #custom-nav-bar a {
@@ -2158,12 +3326,23 @@ a {
   margin: 0 3%;
 }
 
-#custom-nav-bar .custom-nav-bar-menu li a {
+#custom-nav-bar .custom-nav-bar-menu li a, #custom-nav-bar .custom-nav-bar-menu li button {
   color: white;
 }
 
-#custom-nav-bar .custom-nav-bar-menu li a:hover {
+#custom-nav-bar .custom-nav-bar-menu li a:hover, #custom-nav-bar .custom-nav-bar-menu li button:hover {
   color: red;
+}
+
+#custom-nav-bar .custom-nav-bar-menu li button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+  font-family: 'Bebas Neue';
+  font-size: 1.3rem;
 }
 
 #custom-nav-bar .nav-bar-tel {
@@ -2195,7 +3374,7 @@ a {
 #nav-icon {
   display: none;
   width: 3rem;
-  height: 0.4rem;
+  height: 5px;
   background-color: white;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -2204,8 +3383,8 @@ a {
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
   cursor: pointer;
-  margin: 2rem;
-  margin-top: 3.5rem;
+  margin: 20px;
+  margin-top: 40px;
 }
 
 #nav-icon::after {
@@ -2216,7 +3395,7 @@ a {
   height: 100%;
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
-  top: -0.8rem;
+  top: -12px;
   position: absolute;
 }
 
@@ -2226,14 +3405,13 @@ a {
   width: 100%;
   background: white;
   height: 100%;
-  top: -1.6rem;
+  top: -24px;
   position: absolute;
   -webkit-transition: ease 300ms;
   transition: ease 300ms;
 }
 
 #nav-icon:checked {
-  margin-top: 2rem;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -2251,14 +3429,99 @@ a {
 .nav-logo-mobile {
   list-style: none;
   position: absolute;
-  top: 50%;
+  top: 54%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   left: 1rem;
 }
 
 .nav-logo-mobile img {
-  width: 5rem;
+  width: 60px;
+}
+
+.nav-bar-autos {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  top: 6rem;
+  background: black;
+}
+
+.nav-bar-autos ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+.nav-bar-autos ul a {
+  color: white;
+  -webkit-transition: ease 300ms;
+  transition: ease 300ms;
+}
+
+.nav-bar-autos ul a:hover {
+  color: red;
+}
+
+.nav-bar-autos #nav-bar-autos-btn {
+  cursor: pointer;
+  padding: 0;
+  display: none;
+  background: none;
+  color: white;
+  border: none;
+  outline: none;
+  font-family: 'Bebas Neue';
+  font-size: 2rem;
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar-autos #nav-bar-autos-btn p {
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.vanish {
+  display: none !important;
+}
+
+.opacity {
+  opacity: 0;
+}
+
+@-webkit-keyframes hide-nav {
+  0% {
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes hide-nav {
+  0% {
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    opacity: 0;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -2274,6 +3537,7 @@ a {
         -ms-flex-align: end;
             align-items: flex-end;
     height: auto;
+    background-color: rgba(0, 0, 0, 0.7);
   }
   #custom-nav-bar .custom-nav-bar-menu {
     display: none;
@@ -2285,19 +3549,19 @@ a {
         -ms-flex-align: end;
             align-items: flex-end;
     padding: 0;
-    padding-right: 2rem;
+    padding-right: 20px;
     position: relative;
     margin-top: 1rem;
   }
   #custom-nav-bar .custom-nav-bar-menu .nav-bar-logo {
     display: none;
   }
-  #custom-nav-bar .custom-nav-bar-menu a {
+  #custom-nav-bar .custom-nav-bar-menu a, #custom-nav-bar .custom-nav-bar-menu button {
     font-size: 3rem !important;
   }
   #custom-nav-bar .nav-bar-tel {
     display: none;
-    margin-right: 2rem;
+    margin-right: 20px;
     margin-top: 1rem;
   }
   #custom-nav-bar .nav-bar-tel a {
@@ -2305,6 +3569,47 @@ a {
   }
   #custom-nav-bar #nav-icon {
     display: block;
+  }
+  .nav-bar-autos {
+    width: unset;
+    top: 4rem;
+    background: none;
+    height: 60%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding-right: 20px;
+  }
+  .nav-bar-autos ul {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    list-style: none;
+  }
+  .nav-bar-autos ul li a {
+    font-size: 3rem !important;
+  }
+  .nav-bar-autos #nav-bar-autos-btn {
+    display: block;
+    width: 100%;
+    text-align: end;
+  }
+}
+
+@media (min-width: 1000px) {
+  .nav-bar-autos {
+    padding: 1rem;
   }
 }
 
@@ -2541,6 +3846,18 @@ footer {
   }
 }
 
+@media (max-width: 370px) {
+  .footer-parte-1 .footer-texto {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer-parte-1 .footer-texto .texto {
+    margin-bottom: 1rem;
+  }
+}
+
 /* Wpp Icon */
 #wpp-chat-icon {
   position: fixed;
@@ -2583,5 +3900,13 @@ footer {
 #wpp-chat-icon:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+@media (max-width: 500px) {
+  #wpp-chat-icon {
+    bottom: 15px;
+    right: 15px;
+    top: unset;
+  }
 }
 /*# sourceMappingURL=style.css.map */

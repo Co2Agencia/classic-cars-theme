@@ -12,6 +12,21 @@ function co2_custom_theme(){
     if(is_shop()){
         wp_enqueue_script('shop-scripts', get_template_directory_uri() . '/js/shop-scripts.js', array(), '1.0.0', true);
     }
+
+    // Script para Single product Page
+    if(is_single()){
+        wp_enqueue_script('single-scripts', get_template_directory_uri() . '/js/single-scripts.js', array(), '1.0.0', true);
+    }
+
+    // Script para el Home
+    if(is_home() || is_front_page()){
+        wp_enqueue_script('shop-scripts', get_template_directory_uri() . '/js/home-scripts.js', array(), '1.0.0', true);
+    }
+
+    // Script para categorias
+    if(is_product_category()){
+        wp_enqueue_script('shop-scripts', get_template_directory_uri() . '/js/category-scripts.js', array(), '1.0.0', true);
+    }
 }
 
 add_action('wp_enqueue_scripts', 'co2_custom_theme');
@@ -122,13 +137,84 @@ function get_cat_link_custom($cat_slug){
     return $cat_link;
 }
 
+
+/* 
+    - Le pasamos como parametro "home", "taller" o lo dejamos
+    vacio y nos devuelve el url con la carpeta donde se encuentran
+    las imagenes
+*/
+function get_img_url($home_or_taller_or_else = "else"){
+    $general_img_url = bloginfo('template_url') . "/img";
+    
+    if($home_or_taller_or_else == "home"){
+        return $general_img_url . "/home";
+    }
+    else if($home_or_taller_or_else == "taller"){
+        return $general_img_url . "/taller";
+    }
+    return $general_img_url;
+}
+
+/* Checkea si el dispositivo es mobile, tablet o dekstop */
+function check_device(){
+    $tablet_browser = 0;
+    $mobile_browser = 0;
+     
+    if (preg_match('/(tablet|ipad|playbook)|(android(?!.*(mobi|opera mini)))/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+        $tablet_browser++;
+    }
+     
+    if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|android|iemobile)/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+        $mobile_browser++;
+    }
+     
+    if ((strpos(strtolower($_SERVER['HTTP_ACCEPT']),'application/vnd.wap.xhtml+xml') > 0) or ((isset($_SERVER['HTTP_X_WAP_PROFILE']) or isset($_SERVER['HTTP_PROFILE'])))) {
+        $mobile_browser++;
+    }
+     
+    $mobile_ua = strtolower(substr($_SERVER['HTTP_USER_AGENT'], 0, 4));
+    $mobile_agents = array(
+        'w3c ','acs-','alav','alca','amoi','audi','avan','benq','bird','blac',
+        'blaz','brew','cell','cldc','cmd-','dang','doco','eric','hipt','inno',
+        'ipaq','java','jigs','kddi','keji','leno','lg-c','lg-d','lg-g','lge-',
+        'maui','maxo','midp','mits','mmef','mobi','mot-','moto','mwbp','nec-',
+        'newt','noki','palm','pana','pant','phil','play','port','prox',
+        'qwap','sage','sams','sany','sch-','sec-','send','seri','sgh-','shar',
+        'sie-','siem','smal','smar','sony','sph-','symb','t-mo','teli','tim-',
+        'tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',
+        'wapr','webc','winw','winw','xda ','xda-');
+     
+    if (in_array($mobile_ua,$mobile_agents)) {
+        $mobile_browser++;
+    }
+     
+    if (strpos(strtolower($_SERVER['HTTP_USER_AGENT']),'opera mini') > 0) {
+        $mobile_browser++;
+        //Check for tablets on opera mini alternative headers
+        $stock_ua = strtolower(isset($_SERVER['HTTP_X_OPERAMINI_PHONE_UA'])?$_SERVER['HTTP_X_OPERAMINI_PHONE_UA']:(isset($_SERVER['HTTP_DEVICE_STOCK_UA'])?$_SERVER['HTTP_DEVICE_STOCK_UA']:''));
+        if (preg_match('/(tablet|ipad|playbook)|(android(?!.*mobile))/i', $stock_ua)) {
+          $tablet_browser++;
+        }
+    }
+     
+    if ($tablet_browser > 0) {
+       return 'tablet';
+    }
+    else if ($mobile_browser > 0) {
+       return 'mobile';
+    }
+    else {
+       return 'dekstop';
+    }   
+}
+
 /* Solo muestra los resultados de busqueda de productos */
 function lw_search_filter_pages($query) {
     if ($query->is_search) {
-    $query->set('post_type', 'product');
-    $query->set( 'wc_query', 'product_query' );
+        $query->set('post_type', 'product');
+        $query->set( 'wc_query', 'product_query' );
     }
     return $query;
     }
-     
-    add_filter('pre_get_posts','lw_search_filter_pages');
+
+add_filter('pre_get_posts','lw_search_filter_pages');

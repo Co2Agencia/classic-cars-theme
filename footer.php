@@ -14,15 +14,15 @@
         </div>
 
         <div class="footer-redes">
-            <a href="https://www.instagram.com/classic_cars_ba/">
+            <a href="https://www.instagram.com/classic_cars_ba/" aria-label="instagram">
                 <i class="fab fa-instagram"></i>
             </a>
 
-            <a href="mailto:<?php  echo variables_general("mail");?>">
+            <a href="mailto:<?php  echo variables_general("mail");?>" aria-label="mail">
                 <i class="fas fa-mail-bulk"></i>
             </a>
 
-            <a href="https://wa.me/<?php  echo variables_general("wpp");?>">
+            <a href="https://wa.me/<?php  echo variables_general("wpp");?>" aria-label="Whatsapp">
                 <i class="fab fa-whatsapp"></i>
             </a>
 
@@ -34,8 +34,6 @@
             <li><a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) );?>">Tienda</a></li>
             <li><a href="<?php echo home_url();?>/#sector-contactanos">contacto</a></li>
             <li><a href="<?php echo home_url();?>">Inicio</a></li>
-            <li><a href="<?php echo get_cat_link_custom("cars");?>">Autos</a></li>
-            <li><a href="<?php echo get_cat_link_custom("bikes");?>">MOTOS</a></li>
             <li><a href="<?php echo home_url();?>/taller">TALLER</a></li>
         </ul>
 
